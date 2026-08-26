@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/sobre",
+      "destination": "/pages/sobre.html"
+    }
+  ]
+}
