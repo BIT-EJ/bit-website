@@ -3,6 +3,22 @@
     {
       "source": "/sobre",
       "destination": "/pages/sobre.html"
+    },
+    {
+      "source": "/contato",
+      "destination": "/pages/contato.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/processo-seletivo",
+      "destination": "/pages/processo-seletivo.html"
+    },
+    {
+      "source": "/edital-processo-seletivo",
+      "destination": "/pages/edital-processo-seletivo.html"
     }
   ]
 }
