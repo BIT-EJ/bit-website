@@ -80,7 +80,7 @@ mark {
 }
 @media (max-width: 900px) {
     .nav-btn {
-        padding: 2px 2px;
+        padding: 5px 5px;
     }
 }
 /* hero-wrapper */
