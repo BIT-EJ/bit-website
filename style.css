@@ -45,6 +45,7 @@ mark {
     padding: 20px 32px;
     background: var(--darker-blue);
     font-family: 'Urbanist', sans-serif;
+    gap: 30px;
 }
 .logo {
     display: flex;
