@@ -77,6 +77,11 @@ mark {
     background: var(--main-color);
     color: white;
 }
+@media (max-width: 900px) {
+    .nav-btn {
+        padding: 5px 5px;
+    }
+}
 /* hero-wrapper */
 .hero-wrapper {
     display: flex;
