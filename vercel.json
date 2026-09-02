@@ -5,10 +5,6 @@
       "destination": "/pages/sobre.html"
     },
     {
-      "source": "/contato",
-      "destination": "/pages/contato.html"
-    },
-    {
       "source": "/blog",
       "destination": "/pages/blog.html"
     },
