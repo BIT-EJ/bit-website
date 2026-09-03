@@ -83,8 +83,8 @@ mark {
         padding: 5px 5px;
     }
 }
-/* hero */
-.hero {
+/* hero-sobre-svg */
+.hero-sobre-svg {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -93,12 +93,12 @@ mark {
   text-align: center;
   min-height: 300px;
 }
-.hero h1,
-.hero p {
+.hero-sobre-svg h1,
+.hero-sobre-svg p {
   position: relative;
   z-index: 1;
 }
-.hero svg {
+.hero-sobre-svg svg {
   position: absolute;
   top: 50%;
   left: 50%;
