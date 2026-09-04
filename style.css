@@ -10,9 +10,7 @@
     color: white;
 }
 html {
-    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--darker-blue) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* removido o background daqui — agora é feito via body::before */
 }
 body {
     margin: 0;
@@ -21,6 +19,17 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--darker-blue) 100%);
+    z-index: -1;
 }
 html,
 body {
