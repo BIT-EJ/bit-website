@@ -284,6 +284,9 @@ section h2::after {
                 0 0 15px rgba(0, 255, 200, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
 }
+.devicon-bash-plain {
+    color: white !important;
+}
 /* swiper */
 .swiper {
     width: 100%;
