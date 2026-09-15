@@ -22,7 +22,7 @@
     },
     {
       "source": "/sitemap.xml",
-      "destination": "api/sitemap.js"
+      "destination": "server.js"
     }
   ]
 }
