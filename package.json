@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "start": "node scripts/sitemap.js"
+    "build": "node scripts/sitemap.js"
   }
 }
