@@ -1,0 +1,18 @@
+# BIT - Empresa Júnior de Ciência da Computação na UNIOESTE
+
+> A BIT é a Empresa Júnior de Ciência da Computação da UNIOESTE (Campus Cascavel), formada por estudantes universitários que desenvolvem softwares, sites, sistemas web e soluções tecnológicas de alto padrão sob supervisão acadêmica.
+
+## Páginas Principais
+
+- [Início](https://www.bitej.com.br/): Página principal com visão geral dos serviços de tecnologia, portfólio e proposta de valor da empresa júnior.
+- [Sobre Nós](https://www.bitej.com.br/sobre): Histórico da BIT, nossa missão, valores, estrutura organizacional e a equipe de membros acadêmicos.
+- [Contato](https://www.bitej.com.br/contato): Canais de atendimento, formulário para solicitação de orçamentos, parcerias e tira-dúvidas de projetos.
+
+## Serviços e Soluções
+
+- [Desenvolvimento de Software](https://www.bitej.com.br/servicos): Criação de sistemas web sob medida, aplicativos e plataformas digitais para empresas e empreendedores.
+- [Criação de Sites](https://www.bitej.com.br/servicos): Desenvolvimento de landing pages e sites institucionais responsivos e otimizados para SEO.
+
+## Opcional
+
+- [Portfólio / Projetos](https://www.bitej.com.br/projetos): Histórico de cases de sucesso e sistemas já entregues pela empresa júnior.

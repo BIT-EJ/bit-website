@@ -1,12 +1,4 @@
-Este é o repositório do website da BIT. O projeto utiliza apenas **HTML/CSS/JS** e algumas bibliotecas JS externas.
-
-## ❖ Estrutura e informações importantes
-
-- `data/business.json`: Esse arquivo é usado para armazenar o número de telefone atual da BIT.
-  - Ao atualizar o número de telefone nesse arquivo, o valor é atualizado automaticamente em vários locais do site, evitando a necessidade de alterar o número manualmente em cada página.
-  - **Importante:** Sempre que o número de telefone da BIT mudar, atualize o valor nesse arquivo.
-
----
+Este é o repositório do website da BIT. O projeto utiliza apenas **HTML/CSS/JS**, Node.js e algumas bibliotecas JS externas.
 
 ## ❖ Processo Seletivo
 
