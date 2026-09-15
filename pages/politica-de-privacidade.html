@@ -11,7 +11,7 @@
     <!-- author -->
     <meta name="author" content="BIT">
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' width='181' height='222' viewBox='0 0 181 222' fill='none'&gt;&lt;path fill-rule='evenodd' clip-rule='evenodd' d='M92.5 119L0.5 64.5V168L92.5 221.5V203V119ZM75.5 142.5L40.5 122.5V161.5L75.5 181.5V142.5Z' fill='%230A70B8'/&gt;&lt;path d='M136.5 27.5L45.5 87.5L0.5 60.5L95.5 0.5L136.5 27.5Z' fill='%230A70B8'/&gt;&lt;path d='M181 58L139 29L48.5 88.5L95.5 117L121.5 98.5V205.5L151.5 184.5V77.5L181 58Z' fill='%2357585A'/&gt;&lt;/svg&gt;">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <!-- theme-color -->
     <meta name="theme-color" content="#ffffff">
     <!-- robots -->
@@ -28,20 +28,11 @@
     <meta name="twitter:description" content="Desenvolvimento de softwares, sites e soluções tecnológicas de qualidade com o selo acadêmico da UNIOESTE.">
     <meta name="twitter:image" content="https://bitej.com.br/images/logo.png">
     <!-- canonical -->
-    <link rel="canonical" href="https://www.bitej.com.br/politica-de-privacidade">
+    <link rel="canonical" href="https://www.bitej.com.br">
     <!-- style -->
-    <link rel="preload" href="../style.css" as="style">
     <link rel="stylesheet" href="../style.css">
-    <!-- Devicon CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../aos.css">
 </head>
 <body>
     <!-- header -->
@@ -130,9 +121,9 @@
             <div class="footer-col">
                 <h4>Contato</h4>
                 <p>Segunda a sexta, das 08:00 às 18:00</p>
-                <a href="mailto:contato.bitej@gmail.com" class="link"><i class="link-icon" data-lucide="mail" width="16" height="20"></i> contato.bitej@gmail.com</a>
-                <a href="tel:+5545998247429" class="link"><i class="link-icon" data-lucide="phone" width="16" height="20"></i> +55 (45) 9 98247429</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/place/Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o+-+Bloco+F/@-24.9882484,-53.4497241,162m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50058680e63:0x32549d6a8ff1a37b!8m2!3d-24.9882484!4d-53.4490804!16s%2Fg%2F11w4g7sjg2?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" class="link"><i class="link-icon" data-lucide="map-pin" width="16" height="20"></i> UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</a>
+                <a href="mailto:contato.bitej@gmail.com" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;contato.bitej@gmail.com</a>
+                <a href="tel:+5545998247429" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;+55 (45) 9 98247429</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/place/BIT+%E2%80%93+Empresa+J%C3%BAnior+de+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o/@-24.9881747,-53.4495957,166m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50001ca08b3:0xaf7a4dd297e8c220!8m2!3d-24.9881759!4d-53.448952!16s%2Fg%2F11nvt8__kl?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</a>
             </div>
             <div class="footer-col">
                 <h4>Serviços</h4>
@@ -157,17 +148,15 @@
             <a href="#" class="back-to-top link">Voltar ao topo ↑</a>
         </div>
     </footer>
-    <!-- Lucide -->
-    <script src="https://unpkg.com/lucide@1.23.0/dist/umd/lucide.min.js" integrity="sha256-VfQ/0rVVP9ssHLWllARE9VyUov7Ipy1ni9Smk1D3LNE= sha384-ouAVEJVCMsf8Svzn+BwqbaBhxBEA0xgeVBhHnxmWd+Wqyv18yhWCQwGegFD/OHLq sha512-MuDGtOepwcl4BcPY0B/qCZFKffMwYL9nzwdjiuPGmzwAUQ/qLZBx8C3CwYdQmLBfJQeo7fCu6RyLJCYKPWeAGw==" crossorigin="anonymous"></script>
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js" integrity="sha256-3R+azxOxLxidpHXg8jx8UFdnhZq2IKrGNpZJdAk8KB0= sha384-ZGo5k5ISlEzWLoXyt+lnvKt9j03Z7GkxXh14zLqVy098XJhcdKHjL8pQYVMI8WiH sha512-tnNM6PPNOVfZ5sGPw6hThCrcUBeqt2mVEk3EAj8tCtuMHqbuVm5/HsZagrr8W2aaFE+6rKIByGwQbEnmodrYVg==" crossorigin="anonymous"></script>
+    <script src="scripts/aos.js"></script>
+    <!-- aos_script -->
+    <script src="scripts/aos_script.js"></script>
     <!-- typed.js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" integrity="sha256-WEJEZ6uz+kswKoDHEI/iDKgyjk7LQnXPGgTbP6X4Pyc= sha384-cMrTlShXEGSdSFA359p+3aVUxK/R+0TAfbRZMcTlAn8yqzxEDj05QsS65nTFMMj4 sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" integrity="sha256-mF8SJMDu7JnTZ6nbNeWORLIefrnORYMbFbTBCOQf2X8= sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav sha512-udE62vSvHiHZI6was+afi911XJuYTEAYxmBHDHt90HnxAMcve4IV9kzb5jKZDMQW6IVCtPFwGUYQteaFtGeNpQ==" crossorigin="anonymous"></script>
+    <script src="scripts/typed.umd.js"></script>
+    <!-- typed_script -->
+    <script src="scripts/typed_script.js"></script>
     <!-- instant.page -->
-    <script src="../scripts/instant.page.js"></script>
-    <!-- script -->
-    <script src="../scripts/script.js"></script>
+    <script src="scripts/instant.page.js"></script>
 </body>
 </html>
