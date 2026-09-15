@@ -19,10 +19,6 @@
     {
       "source": "/politica-de-privacidade",
       "destination": "/pages/politica-de-privacidade.html"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "server.js"
     }
   ]
 }
