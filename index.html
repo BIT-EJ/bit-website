@@ -43,10 +43,17 @@
             </svg>
             <span class="logo-text">BIT</span>
         </a>
+        <!-- <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button> -->
         <nav class="nav">
+            <a href="https://bitej.com.br" class="nav-btn">Início</a>
             <a href="https://bitej.com.br/sobre" class="nav-btn">Sobre</a>
+            <a href="https://bitej.com.br/servicos" class="nav-btn">Servicos</a>
+            <a href="https://bitej.com.br/projetos" class="nav-btn">Projetos</a>
+            <a href="https://bitej.com.br/" class="nav-btn">Equipe</a>
+            <a href="https://bitej.com.br/contato" class="nav-btn">Contato</a>
             <!-- <a href="https://bitej.com.br/blog" class="nav-btn">Blog</a> -->
             <a href="https://bitej.com.br/processo-seletivo" class="nav-btn">Processo Seletivo</a>
+            <a href="https://bitej.com.br/contato" class="nav-btn nav-btn-cta">Fale Conosco →</a>
         </nav>
     </header>
     <main>
@@ -216,5 +223,15 @@
     <script src="scripts/typed_script.js"></script>
     <!-- instant.page -->
     <script src="scripts/instant.page.js"></script>
+    <!-- menu-toggle script -->
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        toggle.addEventListener('click', () => {
+            const aberto = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', aberto);
+            toggle.textContent = aberto ? '✕' : '☰';
+        });
+    </script>
 </body>
 </html>
