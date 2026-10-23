@@ -64,6 +64,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Cor de segurança: evita o branco aparecer se o fundo fixo atrasar ao rolar rápido no celular */
+  background-color: var(--navy-dark);
 }
 
 body {
@@ -82,12 +84,21 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Altura maior da tela (barra do navegador recolhida), para não sobrar faixa embaixo */
+  height: 100vh;
+  height: 100lvh;
   z-index: -1;
+  background-color: var(--navy-dark);
   background-image: var(--pattern), linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
   background-repeat: repeat, no-repeat;
   background-size: 304px 304px, cover;
   background-position: 0 0, center;
+  /* Mantém o fundo em uma camada própria, sem travar na rolagem rápida */
+  transform: translateZ(0);
+  pointer-events: none;
 }
 
 button {
