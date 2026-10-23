@@ -1,105 +1,392 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- basic meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- title -->
-    <title>Sobre nós | BIT - Empresa Júnior de Computação na UNIOESTE</title>
-    <!-- description -->
-    <meta name="description" content="BIT — Desenvolvimento de soluções com qualidade profissional e visão inovadora de uma empresa júnior de Ciência da Computação.">
-    <!-- author -->
+
+    <!-- SEO -->
+    <title>Sobre nós | BIT - Empresa Júnior de Ciência da Computação na UNIOESTE</title>
+    <meta name="description" content="Conheça a BIT, empresa júnior de Ciência da Computação da UNIOESTE. Desenvolvemos soluções tecnológicas com qualidade profissional, inovação e colaboração.">
     <meta name="author" content="BIT">
-    <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <!-- theme-color -->
-    <meta name="theme-color" content="#ffffff">
-    <!-- robots -->
     <meta name="robots" content="index, follow">
-    <!-- open graph -->
+    <meta name="theme-color" content="#0F172A">
+
+    <link rel="canonical" href="https://bitej.com.br/sobre">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bitej.com.br">
-    <meta property="og:title" content="BIT - Empresa Júnior de Ciência da Computação na UNIOESTE">
-    <meta property="og:description" content="Desenvolvimento de softwares, sites e soluções tecnológicas de qualidade com o selo acadêmico da UNIOESTE. Conheça nossos projetos!">
-    <meta property="og:image" content="https://bitej.com.br/images/logo.png"> <!-- URL da imagem de capa (recomendado: 1200x630px) -->
-    <!-- Twitter card -->
+    <meta property="og:url" content="https://bitej.com.br/sobre">
+    <meta property="og:title" content="Sobre nós | BIT - Empresa Júnior de Ciência da Computação">
+    <meta property="og:description" content="Conheça nossa história, nossos valores e a trajetória da BIT na UNIOESTE.">
+    <meta property="og:image" content="https://bitej.com.br/images/logo.png">
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BIT - Empresa Júnior de Ciência da Computação na UNIOESTE">
-    <meta name="twitter:description" content="Desenvolvimento de softwares, sites e soluções tecnológicas de qualidade com o selo acadêmico da UNIOESTE.">
+    <meta name="twitter:title" content="Sobre nós | BIT">
+    <meta name="twitter:description" content="Conheça a história e os valores da BIT, empresa júnior de Ciência da Computação da UNIOESTE.">
     <meta name="twitter:image" content="https://bitej.com.br/images/logo.png">
-    <!-- canonical -->
-    <link rel="canonical" href="https://www.bitej.com.br">
-    <!-- style -->
-    <link rel="stylesheet" href="/style.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../pages/sobre.css">
 </head>
+
 <body>
-    <!-- header -->
+
+    <!-- HEADER -->
     <header class="site-header">
-        <a href="https://bitej.com.br" class="logo">
-            <svg class="logo-icon" width="181" height="222" viewBox="0 0 181 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M92.5 119L0.5 64.5V168L92.5 221.5V203V119ZM75.5 142.5L40.5 122.5V161.5L75.5 181.5V142.5Z" fill="#0A70B8"/>
-                <path d="M136.5 27.5L45.5 87.5L0.5 60.5L95.5 0.5L136.5 27.5Z" fill="#0A70B8"/>
-                <path d="M181 58L139 29L48.5 88.5L95.5 117L121.5 98.5V205.5L151.5 184.5V77.5L181 58Z" fill="#57585A"/>
-            </svg>
-            <span class="logo-text">BIT</span>
-        </a>
-        <nav class="nav">
-            <a href="https://bitej.com.br/sobre" class="nav-btn">Sobre</a>
-            <!-- <a href="https://bitej.com.br/blog" class="nav-btn">Blog</a> -->
-            <a href="https://bitej.com.br/processo-seletivo" class="nav-btn">Processo Seletivo</a>
-        </nav>
+        <div class="container header-inner">
+
+            <a href="https://bitej.com.br" class="logo" aria-label="BIT - Página inicial">
+                <svg class="logo-icon"
+                     viewBox="0 0 181 222"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M92.5 119L0.5 64.5V168L92.5 221.5V203V119ZM75.5 142.5L40.5 122.5V161.5L75.5 181.5V142.5Z"
+                          fill="#0A70B8"/>
+                    <path d="M136.5 27.5L45.5 87.5L0.5 60.5L95.5 0.5L136.5 27.5Z"
+                          fill="#0A70B8"/>
+                    <path d="M181 58L139 29L48.5 88.5L95.5 117L121.5 98.5V205.5L151.5 184.5V77.5L181 58Z"
+                          fill="#57585A"/>
+                </svg>
+
+                <span class="logo-text">BIT</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="nav" id="menu" aria-label="Menu principal">
+                <a href="https://bitej.com.br/sobre"
+                   class="nav-link"
+                   aria-current="page">Sobre</a>
+
+                <a href="https://bitej.com.br/servicos" class="nav-link">Serviços</a>
+                <a href="https://bitej.com.br/projetos" class="nav-link">Projetos</a>
+                <a href="https://bitej.com.br/equipe" class="nav-link">Equipe</a>
+                <a href="https://bitej.com.br/faq" class="nav-link">FAQ</a>
+                <a href="https://bitej.com.br/processo-seletivo" class="nav-link">Processo seletivo</a>
+
+                <a href="https://bitej.com.br/contato" class="btn btn-primary btn-sm">
+                    Fale conosco
+                </a>
+            </nav>
+
+        </div>
     </header>
+
     <main>
-        <article>
-            <!-- hero-wrapper -->
-            <div class="hero-wrapper">
-                <div class="hero-content">
-                    <section>
-                        <h1>Sobre Nós</h1>
-                        <p>Somos uma empresa júnior apaixonada por tecnologia.<br>Estamos sempre em busca de novos conhecimentos na área e apreciamos a oportunidade de compartilhar o que sabemos com outras pessoas.</p>
-                        <p style="color: #28c628;">“Somos uma equipe formada por estudantes com diferentes perfis, experiências e habilidades. Essa diversidade é o que torna nossa equipe tão única.”</p>
-                        <p>Quando a BIT começou?</p>
-                        <p>A história da BIT começa em 19 de dezembro de 2016, com a realização da Assembleia Geral de Constituição da associação, na qual foi aprovado seu Estatuto Social e empossada sua primeira Diretoria Executiva.<br><br>
-                        Dezembro de 2016 não representa só uma data de constituição, mas sim o ponto de partida de uma trajetória construída por várias gerações de estudantes, que contribuíram ao longo dos anos, fortalecendo e consolidando a BIT como um importante apoio aos estudantes do curso de Ciência da Computação da UNIOESTE.</p>
-                    </section>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="bloco sobre-hero" id="inicio">
+            <div class="container">
+
+                <div class="sobre-hero-conteudo">
+                    <h1 class="bloco-titulo">
+                        Sobre nós.
+                    </h1>
+
+                    <p class="bloco-texto sobre-introducao">
+                        Somos uma empresa júnior apaixonada por tecnologia.
+                        Estamos sempre em busca de novos conhecimentos na
+                        área e apreciamos a oportunidade de compartilhar
+                        o que sabemos com outras pessoas.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUEM SOMOS -->
+        <section class="bloco sobre-identidade" id="identidade">
+            <div class="container">
+
+                <div class="separador">
+                    <span>Quem somos</span>
+                </div>
+
+                <div class="sobre-identidade-conteudo">
+
+                    <div class="sobre-identidade-cabecalho">
+                        <h2 class="bloco-titulo">
+                            Mais do que tecnologia, somos pessoas.
+                        </h2>
+
+                        <p class="sobre-identidade-descricao">
+                            A BIT é a empresa júnior de Ciência da Computação
+                            da Universidade Estadual do Oeste do Paraná
+                            (UNIOESTE), em Cascavel.
+                        </p>
+                    </div>
+
+                    <blockquote class="sobre-citacao">
+                        <span class="sobre-citacao-marca"
+                              aria-hidden="true">“</span>
+
+                        <p>
+                            Somos uma equipe formada por estudantes com
+                            diferentes perfis, experiências e habilidades.
+                            Essa diversidade é o que torna nossa equipe
+                            tão única.
+                        </p>
+                    </blockquote>
+
                 </div>
             </div>
-        </article>
+        </section>
+
+        <!-- NOSSA HISTÓRIA -->
+        <section class="bloco sobre-historia" id="historia">
+            <div class="container">
+
+                <div class="separador">
+                    <span>Nossa trajetória</span>
+                </div>
+
+                <div class="sobre-historia-grid">
+
+                    <div class="sobre-historia-intro">
+                        <p class="sobre-historia-etiqueta">Desde 2016</p>
+
+                        <h2 class="bloco-titulo">
+                            Uma história construída por gerações.
+                        </h2>
+
+                        <p class="bloco-texto">
+                            Conhecimento, colaboração e evolução fazem parte
+                            da trajetória da BIT desde sua fundação.
+                        </p>
+                    </div>
+
+                    <div class="sobre-historia-conteudo">
+
+                        <article class="sobre-evento">
+                            <div class="sobre-evento-marcador" aria-hidden="true">
+                                <span></span>
+                            </div>
+
+                            <div class="sobre-evento-corpo">
+                                <p class="sobre-evento-data">
+                                    19 de dezembro de 2016
+                                </p>
+
+                                <h3>O início da BIT</h3>
+
+                                <p>
+                                    A história da BIT começa com a realização
+                                    da Assembleia Geral de Constituição da
+                                    associação, ocasião em que foi aprovado
+                                    seu Estatuto Social e empossada sua
+                                    primeira Diretoria Executiva.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="sobre-evento">
+                            <div class="sobre-evento-marcador" aria-hidden="true">
+                                <span></span>
+                            </div>
+
+                            <div class="sobre-evento-corpo">
+                                <p class="sobre-evento-data">
+                                    Uma trajetória coletiva
+                                </p>
+
+                                <h3>Conhecimento que se renova</h3>
+
+                                <p>
+                                    Ao longo dos anos, diferentes gerações
+                                    de estudantes contribuíram para fortalecer
+                                    e consolidar a BIT como parte importante
+                                    da experiência acadêmica dos estudantes
+                                    de Ciência da Computação da UNIOESTE.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="sobre-evento">
+                            <div class="sobre-evento-marcador" aria-hidden="true">
+                                <span></span>
+                            </div>
+
+                            <div class="sobre-evento-corpo">
+                                <p class="sobre-evento-data">
+                                    Presente e futuro
+                                </p>
+
+                                <h3>Evoluir para transformar</h3>
+
+                                <p>
+                                    A BIT segue valorizando o aprendizado
+                                    contínuo, a colaboração e o desenvolvimento
+                                    de soluções tecnológicas, conectando a
+                                    formação universitária às necessidades
+                                    de pessoas e organizações.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <!-- footer -->
+
+    <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Contato</h4>
-                <p>Segunda a sexta, das 08:00 às 18:00</p>
-                <a href="mailto:contato.bitej@gmail.com" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;contato.bitej@gmail.com</a>
-                <a href="tel:+5545998247429" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;+55 (45) 9 98247429</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/place/BIT+%E2%80%93+Empresa+J%C3%BAnior+de+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o/@-24.9881747,-53.4495957,166m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50001ca08b3:0xaf7a4dd297e8c220!8m2!3d-24.9881759!4d-53.448952!16s%2Fg%2F11nvt8__kl?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</a>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-col">
+                    <h2>Contato</h2>
+
+                    <p>Segunda a sexta, das 08:00 às 18:00</p>
+
+                    <a href="mailto:contato.bitej@gmail.com">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/mail.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        contato.bitej@gmail.com
+                    </a>
+
+                    <a href="tel:+5545998247429">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/phone.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        +55 (45) 9 98247429
+                    </a>
+
+                    <a href="https://www.google.com/maps/place/BIT+%E2%80%93+Empresa+J%C3%BAnior+de+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o/@-24.9881747,-53.4495957,166m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50001ca08b3:0xaf7a4dd297e8c220!8m2!3d-24.9881759!4d-53.448952!16s%2Fg%2F11nvt8__kl"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/map-pin.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil
+                    </a>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Institucional</h2>
+
+                    <a href="https://bitej.com.br/sobre" aria-current="page">Sobre</a>
+                    <a href="https://bitej.com.br/faq">FAQ</a>
+                    <a href="https://bitej.com.br/politica-de-privacidade">Política de Privacidade</a>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Redes sociais</h2>
+
+                    <a href="https://wa.me/554598247429"
+                       target="_blank"
+                       rel="noopener noreferrer">WhatsApp</a>
+
+                    <a href="https://br.linkedin.com/company/bitej"
+                       target="_blank"
+                       rel="noopener noreferrer">LinkedIn</a>
+
+                    <a href="https://www.instagram.com/bit.empresajunior"
+                       target="_blank"
+                       rel="noopener noreferrer">Instagram</a>
+
+                    <a href="https://www.facebook.com/bitempresajunior"
+                       target="_blank"
+                       rel="noopener noreferrer">Facebook</a>
+
+                    <a href="https://www.youtube.com/@bitempresajunior9170"
+                       target="_blank"
+                       rel="noopener noreferrer">YouTube</a>
+                </div>
+
             </div>
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <a href="https://bitej.com.br/politica-de-privacidade" class="link">Política de Privacidade</a>
-                <a href="https://bitej.com.br/sobre" class="link">Sobre</a>
-                <!-- <a href="https://bitej.com.br/blog" class="link">Blog</a> -->
+
+            <div class="footer-bottom">
+                <p>
+                    © 2016-<span id="ano-atual">2026</span> BIT.
+                    Todos os direitos reservados.
+                </p>
+
+                <a href="#inicio">Voltar ao topo ↑</a>
             </div>
-            <div class="footer-col">
-                <h4>Redes sociais</h4>
-                <a target="_blank" rel="noopener noreferrer" href="https://wa.me/554598247429" class="link">Whatsapp</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://br.linkedin.com/company/bitej" class="link">LinkedIn</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bit.empresajunior" class="link">Instagram</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/bitempresajunior" class="link">Facebook</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@bitempresajunior9170" class="link">Youtube</a>
-            </div>
-        </div>
-        <hr class="footer-divider">
-        <div class="footer-bottom">
-            <p class="copyright">
-                © 2016-<script>document.write(new Date().getFullYear())</script> BIT. All rights reserved.
-            </p>
-            <a href="#" class="back-to-top link">Voltar ao topo ↑</a>
+
         </div>
     </footer>
-    <!-- instant.page -->
-    <script src="scripts/instant.page.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="../scripts/instant.page.js"></script>
+
+    <script>
+        // Atualiza o ano do rodapé.
+        document.getElementById('ano-atual').textContent =
+            new Date().getFullYear();
+
+        // Menu responsivo.
+        (function () {
+            var botao = document.getElementById('menu-toggle');
+            var menu = document.getElementById('menu');
+
+            function definirMenu(aberto) {
+                menu.classList.toggle('aberto', aberto);
+
+                botao.setAttribute(
+                    'aria-expanded',
+                    String(aberto)
+                );
+
+                botao.setAttribute(
+                    'aria-label',
+                    aberto ? 'Fechar menu' : 'Abrir menu'
+                );
+
+                botao.textContent = aberto ? '✕' : '☰';
+            }
+
+            botao.addEventListener('click', function () {
+                definirMenu(
+                    botao.getAttribute('aria-expanded') !== 'true'
+                );
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    definirMenu(false);
+                });
+            });
+
+            document.addEventListener('click', function (evento) {
+                if (!evento.target.closest('.site-header')) {
+                    definirMenu(false);
+                }
+            });
+
+            document.addEventListener('keydown', function (evento) {
+                if (evento.key === 'Escape') {
+                    definirMenu(false);
+                    botao.focus();
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
