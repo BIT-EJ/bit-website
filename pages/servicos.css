@@ -1,0 +1,234 @@
+/* =========================================
+   SERVIÇOS - BIT Empresa Júnior
+   Estilo complementar ao CSS geral do site
+   (.servicos-grid, .card, .card-icone, .cta-card
+   e .bloco-final já vêm do style.css)
+   ========================================= */
+
+
+/* =========================================
+   1. Apresentação
+   Mesmo padrão visual da página Sobre
+   ========================================= */
+
+.servicos-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.servicos-hero-conteudo {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.servicos-hero-conteudo .bloco-titulo {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.servicos-introducao {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.servicos-hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+
+/* =========================================
+   2. Tecnologias utilizadas
+   Introdução fixa à esquerda, ícones à direita
+   ========================================= */
+
+.servicos-tecnologias-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(40px, 8vw, 120px);
+    align-items: start;
+}
+
+.servicos-tecnologias-intro {
+    position: sticky;
+    top: calc(var(--header-height) + 32px);
+}
+
+.servicos-tecnologias-intro .bloco-titulo {
+    max-width: 520px;
+}
+
+.servicos-tecnologias-intro .bloco-texto {
+    max-width: 460px;
+    line-height: 1.85;
+}
+
+.servicos-etiqueta {
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+}
+
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+}
+
+.tech-icons > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 22px 12px 18px;
+    border: 1px solid var(--line-blue);
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.tech-icons > div:hover {
+    border-color: var(--blue-light);
+    background-color: var(--surface-blue);
+}
+
+.tech-icons img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* Ícones escuros (ex.: Bash) ficam brancos no fundo escuro */
+.tech-icons img.invert {
+    filter: invert(1);
+}
+
+.tech-icons span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   3. Responsividade: telas médias
+   ========================================= */
+
+@media (max-width: 1100px) {
+    .servicos-tecnologias-grid {
+        gap: 40px;
+    }
+}
+
+
+/* =========================================
+   4. Responsividade: tablets
+   ========================================= */
+
+@media (max-width: 899px) {
+    .servicos-tecnologias-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .servicos-tecnologias-intro {
+        position: static;
+    }
+
+    .servicos-tecnologias-intro .bloco-titulo {
+        max-width: 720px;
+    }
+}
+
+
+/* =========================================
+   5. Responsividade: tablets e celulares
+   ========================================= */
+
+@media (max-width: 768px) {
+    .servicos-hero {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .servicos-hero-conteudo {
+        text-align: left;
+    }
+
+    .servicos-hero-conteudo .bloco-titulo {
+        text-align: left;
+    }
+
+    .servicos-introducao {
+        margin: 0;
+        text-align: left;
+    }
+
+    .servicos-hero-botoes {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =========================================
+   6. Responsividade: celulares pequenos
+   ========================================= */
+
+@media (max-width: 480px) {
+    .servicos-hero {
+        padding-top: 40px;
+        padding-bottom: 44px;
+    }
+
+    .servicos-hero-botoes,
+    .servicos-hero-botoes .btn {
+        width: 100%;
+    }
+
+    .tech-icons {
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        gap: 12px;
+    }
+
+    .tech-icons > div {
+        padding: 18px 8px 14px;
+    }
+
+    .tech-icons img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+/* =========================================
+   7. Acessibilidade e movimento reduzido
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-icons > div {
+        transition: none;
+    }
+}
