@@ -31,10 +31,6 @@
     margin-bottom: 16px;
 }
 
-.equipe-intro .bloco-titulo span {
-    color: var(--blue);
-}
-
 .equipe-intro .bloco-texto {
     max-width: 680px;
     margin: 0 auto;
