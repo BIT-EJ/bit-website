@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/sobre",
+      "destination": "/pages/sobre.html"
+    },
+    {
+      "source": "/servicos",
+      "destination": "/pages/servicos.html"
+    },
+    {
+      "source": "/projetos",
+      "destination": "/pages/projetos.html"
+    },
+    {
+      "source": "/equipe",
+      "destination": "/pages/equipe.html"
+    },
+    {
+      "source": "/processo-seletivo",
+      "destination": "/pages/processo-seletivo.html"
+    },
+    {
+      "source": "/edital-processo-seletivo",
+      "destination": "/pages/edital-processo-seletivo.html"
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/pages/politica-de-privacidade.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/pages/faq.html"
+    }
+    {
+      "source": "/blog",
+      "destination": "/pages/blog.html"
+    }
+  ]
+}

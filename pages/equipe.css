@@ -1,0 +1,251 @@
+/* ==========================================================================
+   BIT – Página da Equipe
+   equipe.css
+
+   Índice
+   1. Introdução
+   2. Grade de integrantes
+   3. Cards e fotografias
+   4. Informações dos integrantes
+   5. Chamada para ação
+   6. Responsividade
+   7. Acessibilidade e movimento reduzido
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Introdução
+   ========================================================================== */
+
+.equipe-section {
+    padding-top: clamp(64px, 8vw, 100px);
+}
+
+.equipe-intro {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.equipe-intro .bloco-titulo {
+    margin-bottom: 16px;
+}
+
+.equipe-intro .bloco-titulo span {
+    color: var(--blue);
+}
+
+.equipe-intro .bloco-texto {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   2. Grade de integrantes
+   ========================================================================== */
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+
+/* ==========================================================================
+   3. Cards e fotografias
+   ========================================================================== */
+
+.equipe-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid var(--line-blue);
+    border-radius: var(--radius);
+
+    background-color: var(--surface);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.equipe-card:hover {
+    border-color: var(--blue-light);
+    transform: translateY(-4px);
+}
+
+.equipe-foto {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    background-color: var(--navy);
+}
+
+.equipe-foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.equipe-card:hover .equipe-foto img {
+    transform: scale(1.04);
+}
+
+
+/* ==========================================================================
+   4. Informações dos integrantes
+   ========================================================================== */
+
+.equipe-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    gap: 8px;
+    padding: 22px 20px 24px;
+
+    text-align: center;
+}
+
+.equipe-info h2 {
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.35;
+
+    color: var(--text);
+
+    overflow-wrap: anywhere;
+}
+
+.equipe-info p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: var(--blue-light);
+}
+
+
+/* ==========================================================================
+   5. Chamada para ação
+   ========================================================================== */
+
+.equipe-cta {
+    margin-top: clamp(48px, 7vw, 72px);
+}
+
+.equipe-cta .btn {
+    white-space: normal;
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   6. Responsividade
+   ========================================================================== */
+
+/* Tablets e telas médias */
+@media (min-width: 560px) {
+    .equipe-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .equipe-info {
+        padding: 22px 16px 24px;
+    }
+}
+
+/* Notebooks e desktops */
+@media (min-width: 900px) {
+    .equipe-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+    }
+}
+
+/* Telas grandes */
+@media (min-width: 1400px) {
+    .equipe-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
+    }
+}
+
+/* Tablets: mesmo comportamento da introdução do FAQ */
+@media (max-width: 768px) {
+    .equipe-intro {
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .equipe-intro .bloco-texto {
+        margin: 0;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 480px) {
+    .equipe-section {
+        padding-top: 40px;
+    }
+
+    .equipe-intro {
+        margin-bottom: 26px;
+    }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 380px) {
+    .equipe-section {
+        padding-top: 48px;
+    }
+
+    .equipe-grid {
+        gap: 20px;
+    }
+
+    .equipe-info {
+        padding: 18px 14px 20px;
+    }
+
+    .equipe-info h2 {
+        font-size: 1rem;
+    }
+
+    .equipe-info p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ==========================================================================
+   7. Acessibilidade e movimento reduzido
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .equipe-card,
+    .equipe-foto img {
+        transition: none;
+    }
+
+    .equipe-card:hover {
+        transform: none;
+    }
+
+    .equipe-card:hover .equipe-foto img {
+        transform: none;
+    }
+}

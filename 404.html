@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Erro 404</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+        body {
+            position: fixed;
+            inset: 0;
+            height: 100vh;
+            height: 100dvh;
+        }
+        #can {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+        #title-wrap {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            z-index: 2;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        #title {
+            margin: 0;
+            color: #FFFFFF;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(4rem, min(38vw, 62vh), 20rem);
+            line-height: 1;
+            text-align: center;
+            text-shadow: none;
+            transition: text-shadow 10s 3s;
+        }
+        #title.anim {
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" aria-hidden="true"></canvas>
+    <div id="title-wrap">
+        <h1 id="title">404</h1>
+    </div>
+    <script>
+    (function () {
+        'use strict';
+        var COLOR            = '#0A70B8';
+        var LINE_WIDTH       = 0.4;
+        var MAX_LINES_1080P  = 900;
+        var SPAWN_PER_FRAME  = 4;
+        var FADE_EVERY       = 5;
+        var FADE_ALPHA       = 0.04;
+        var MOVES            = [80, 240];
+        var TIME_BETWEEN     = [3, 5];
+        var DISTANCE         = [50, 2000];
+        var ATTENUATOR       = 900;
+        var canvas = document.getElementById('can');
+        var title  = document.getElementById('title');
+        var ctx    = canvas.getContext('2d');
+        setTimeout(function () { title.classList.add('anim'); }, 500);
+        var reduceMotion = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var lowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+                     (navigator.deviceMemory && navigator.deviceMemory <= 4);
+        var dpr = Math.min(window.devicePixelRatio || 1, lowEnd ? 1 : 1.5);
+        var w = 0, h = 0;
+        var quality = lowEnd ? 0.55 : 1;
+        var maxLines = 0;
+        var distScale = 1;
+        var lines = [];
+        var pool = [];
+        var frameCount = 0;
+        var raf = null;
+        var lastT = 0;
+        var slowFrames = 0;
+        var resizeTimer = null;
+        function rand(a) {
+            return Math.random() * (a[1] - a[0]) + a[0];
+        }
+        function updateLimits() {
+            var areaScale = Math.min(Math.max((w * h) / (1920 * 1080), 0.25), 1.2);
+            maxLines = Math.round(MAX_LINES_1080P * areaScale * quality);
+        }
+        function setup() {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width  = Math.round(w * dpr);
+            canvas.height = Math.round(h * dpr);
+            canvas.style.width  = w + 'px';
+            canvas.style.height = h + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.lineWidth = LINE_WIDTH;
+            ctx.strokeStyle = COLOR;
+            ctx.lineCap = 'round';
+            distScale = Math.min(Math.max(Math.max(w, h) / 1400, 0.35), 1);
+            while (lines.length) pool.push(lines.pop());
+            updateLimits();
+        }
+        function spawn() {
+            var l = pool.pop() || { tx: 0, ty: 0, px: 0, py: 0 };
+            l.x = Math.random() * w;
+            l.y = Math.random() * h;
+            l.vx = l.vy = 0;
+            l.total = rand(MOVES);
+            l.move = 0;
+            l.tbm = rand(TIME_BETWEEN);
+            l.tsm = l.tbm;
+            l.dist = rand(DISTANCE) * distScale;
+            lines.push(l);
+        }
+        function step() {
+            frameCount++;
+            if (frameCount % FADE_EVERY === 0) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = 'rgba(0,0,0,' + FADE_ALPHA + ')';
+                ctx.fillRect(0, 0, w, h);
+                ctx.globalCompositeOperation = 'source-over';
+            }
+            var toSpawn = Math.min(SPAWN_PER_FRAME, maxLines - lines.length);
+            for (var s = 0; s < toSpawn; s++) spawn();
+            ctx.beginPath();
+            for (var i = lines.length - 1; i >= 0; i--) {
+                var l = lines[i];
+                if (++l.tsm >= l.tbm) {
+                    ++l.move;
+                    l.tsm = 0;
+                    var rad = Math.random() * 6.283185307179586;
+                    l.tx = l.x + Math.cos(rad) * l.dist;
+                    l.ty = l.y + Math.sin(rad) * l.dist;
+                }
+                l.px = l.x;
+                l.py = l.y;
+                l.vx += (l.x - l.tx) / ATTENUATOR;
+                l.vy += (l.y - l.ty) / ATTENUATOR;
+                l.x += l.vx;
+                l.y += l.vy;
+                ctx.moveTo(l.px, l.py);
+                ctx.lineTo(l.x, l.y);
+                if (l.move >= l.total) {
+                    pool.push(l);
+                    lines[i] = lines[lines.length - 1];
+                    lines.pop();
+                }
+            }
+            ctx.stroke();
+        }
+        function loop(t) {
+            raf = requestAnimationFrame(loop);
+            var dt = t - lastT;
+            lastT = t;
+            if (dt > 34) {
+                if (++slowFrames > 45 && quality > 0.3) {
+                    quality = Math.max(0.3, quality * 0.8);
+                    updateLimits();
+                    slowFrames = 0;
+                }
+            } else if (slowFrames > 0) {
+                slowFrames--;
+            }
+            step();
+        }
+        function start() {
+            if (raf !== null) return;
+            lastT = performance.now();
+            raf = requestAnimationFrame(loop);
+        }
+        function stop() {
+            if (raf !== null) {
+                cancelAnimationFrame(raf);
+                raf = null;
+            }
+        }
+        function run() {
+            setup();
+            if (reduceMotion) {
+                for (var i = 0; i < 350; i++) step();
+            } else {
+                start();
+            }
+        }
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                var nw = window.innerWidth, nh = window.innerHeight;
+                if (nw === w && nh <= h) return;
+                stop();
+                run();
+            }, 150);
+        });
+        document.addEventListener('visibilitychange', function () {
+            if (reduceMotion) return;
+            if (document.hidden) stop(); else start();
+        });
+        run();
+    })();
+    </script>
+</body>
+</html>

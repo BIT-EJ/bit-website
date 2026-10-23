@@ -1,0 +1,381 @@
+/* =========================================
+   FAQ - BIT Empresa Júnior
+   Estilo complementar ao CSS geral do site
+   ========================================= */
+
+/* Seção principal */
+.faq-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Introdução */
+.faq-intro {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.faq-intro .bloco-titulo {
+    margin-bottom: 16px;
+}
+
+.faq-intro .bloco-texto {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Lista de perguntas */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Retângulo individual de cada pergunta */
+.faq-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+
+    /* Borda branca com 100% de opacidade */
+    border: 1px solid #FFFFFF;
+
+    border-radius: 12px;
+    background: #0F172A;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+/* Efeito ao passar o mouse */
+.faq-item:hover {
+    border-color: #0A70B8;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15);
+}
+
+/* Cabeçalho clicável da pergunta */
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    min-height: 72px;
+    padding: 22px 24px;
+
+    box-sizing: border-box;
+    list-style: none;
+    cursor: pointer;
+
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    background: #0F172A;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Remove o marcador padrão do navegador */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    content: "";
+}
+
+/* Foco acessível para navegação pelo teclado */
+.faq-item summary:focus-visible {
+    outline: 3px solid #0A70B8;
+    outline-offset: -4px;
+}
+
+/* Hover: fundo azul e texto branco */
+.faq-item:hover summary {
+    color: #FFFFFF;
+    background: #0A70B8;
+}
+
+/* Ícone circular de abrir e fechar */
+.faq-icon {
+    position: relative;
+    display: block;
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Linhas do ícone */
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 2px;
+
+    border-radius: 2px;
+    background: #FFFFFF;
+
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+/* Linha vertical: forma o sinal de mais */
+.faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Ícone também destaca o hover */
+.faq-item:hover .faq-icon {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Pergunta aberta: borda azul e fundo escuro */
+.faq-item[open] {
+    border-color: #0A70B8;
+    background: #0F172A;
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.15);
+}
+
+.faq-item[open] summary {
+    color: #FFFFFF;
+    background: #0F172A;
+}
+
+/* Pergunta aberta com hover: azul */
+.faq-item[open]:hover summary {
+    background: #0A70B8;
+    color: #FFFFFF;
+}
+
+/* Ícone destacado quando a pergunta está aberta */
+.faq-item[open] .faq-icon {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.12);
+    transform: rotate(180deg);
+}
+
+.faq-item[open] .faq-icon::before,
+.faq-item[open] .faq-icon::after {
+    background: #FFFFFF;
+}
+
+/* Remove a linha vertical: o mais vira menos */
+.faq-item[open] .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Área da resposta */
+.faq-answer {
+    padding: 0 24px 24px;
+
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.8;
+
+    background: #0F172A;
+    overflow-wrap: anywhere;
+    animation: faq-appear 0.2s ease;
+}
+
+.faq-answer p {
+    margin: 0 0 14px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links dentro das respostas */
+.faq-answer a {
+    color: #60B9F5;
+    font-weight: 600;
+    text-decoration: none;
+    text-underline-offset: 4px;
+
+    transition: color 0.2s ease;
+}
+
+.faq-answer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.faq-answer a:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Animação suave da resposta */
+@keyframes faq-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   Chamada para contato
+   ========================================= */
+
+.faq-cta {
+    max-width: 900px;
+    margin: 48px auto 0;
+    text-align: center;
+}
+
+.faq-cta > p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.faq-cta .bloco-acao-botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Ícone do botão de contato */
+.faq-cta .btn svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   Responsividade: tablets
+   ========================================= */
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .faq-intro {
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .faq-list {
+        gap: 12px;
+    }
+
+    .faq-item {
+        border-radius: 10px;
+    }
+
+    .faq-item summary {
+        min-height: 64px;
+        padding: 18px;
+        gap: 14px;
+        font-size: 1rem;
+    }
+
+    .faq-icon {
+        flex-basis: 26px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .faq-answer {
+        padding: 0 18px 20px;
+        font-size: 0.96rem;
+    }
+
+    .faq-cta {
+        margin-top: 36px;
+    }
+}
+
+/* =========================================
+   Responsividade: celulares
+   ========================================= */
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding-top: 40px;
+        padding-bottom: 44px;
+    }
+
+    .faq-intro {
+        margin-bottom: 26px;
+    }
+
+    .faq-item summary {
+        padding: 16px;
+        gap: 12px;
+        font-size: 0.95rem;
+    }
+
+    .faq-icon {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .faq-answer {
+        padding: 0 16px 18px;
+        font-size: 0.93rem;
+        line-height: 1.75;
+    }
+
+    .faq-cta {
+        margin-top: 30px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-item summary,
+    .faq-icon,
+    .faq-icon::before,
+    .faq-icon::after,
+    .faq-answer a {
+        transition: none;
+    }
+
+    .faq-answer {
+        animation: none;
+    }
+}
