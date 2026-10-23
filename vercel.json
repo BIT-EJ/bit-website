@@ -31,7 +31,7 @@
     {
       "source": "/faq",
       "destination": "/pages/faq.html"
-    }
+    },
     {
       "source": "/blog",
       "destination": "/pages/blog.html"
