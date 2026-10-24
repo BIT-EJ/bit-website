@@ -196,7 +196,9 @@
     transform: translate(-50%, -50%) rotate(0deg);
 }
 
-/* Área da resposta */
+/* Área da resposta
+   (sem animação própria: a abertura e o fechamento são
+   animados pelo ::details-content, mais abaixo) */
 .faq-answer {
     padding: 0 24px 24px;
 
@@ -206,7 +208,6 @@
 
     background: #0F172A;
     overflow-wrap: anywhere;
-    animation: faq-appear 0.2s ease;
 }
 
 .faq-answer p {
@@ -238,16 +239,38 @@
     border-radius: 2px;
 }
 
-/* Animação suave da resposta */
-@keyframes faq-appear {
-    from {
-        opacity: 0;
-        transform: translateY(-4px);
+/* =========================================
+   Abertura e fechamento suaves
+   -----------------------------------------
+   A resposta que fecha e a que abre animam a
+   altura ao mesmo tempo, então o conteúdo abaixo
+   desliza de forma contínua, sem piscar nem dar
+   "pulos".
+
+   Em navegadores sem suporte a ::details-content
+   ou interpolate-size, a troca é instantânea
+   (sem animação e sem piscar).
+   ========================================= */
+
+@supports selector(::details-content) and (interpolate-size: allow-keywords) {
+    .faq-item {
+        interpolate-size: allow-keywords;
     }
 
-    to {
+    .faq-item::details-content {
+        block-size: 0;
+        opacity: 0;
+        overflow: clip;
+
+        transition:
+            block-size 0.35s ease,
+            opacity 0.25s ease,
+            content-visibility 0.35s allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+        block-size: auto;
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -364,7 +387,8 @@
     }
 }
 
-/* Respeita a preferência por movimento reduzido */
+/* Respeita a preferência por movimento reduzido:
+   a troca fica instantânea, sem animação */
 @media (prefers-reduced-motion: reduce) {
     .faq-item,
     .faq-item summary,
@@ -375,7 +399,7 @@
         transition: none;
     }
 
-    .faq-answer {
-        animation: none;
+    .faq-item::details-content {
+        transition: none;
     }
 }
