@@ -1,0 +1,278 @@
+/* =========================================
+   CONTATO - BIT Empresa Júnior
+   Estilo complementar ao CSS geral do site
+   ========================================= */
+
+
+/* =========================================
+   1. Apresentação
+   Mesmo padrão visual da introdução de Sobre
+   ========================================= */
+
+.ct-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.ct-hero-conteudo {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ct-hero-conteudo .bloco-titulo {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.ct-introducao {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* =========================================
+   2. Canais de atendimento
+   Reaproveita .cards, .card e .card-icone
+   ========================================= */
+
+.ct-canais,
+.ct-mensagem {
+    position: relative;
+    padding-top: clamp(40px, 6vw, 72px);
+    background: transparent;
+}
+
+.ct-cards {
+    margin-top: 0;
+}
+
+/* Cards que são links */
+.ct-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ct-card-link:hover {
+    color: inherit;
+}
+
+.ct-card-link h3 {
+    overflow-wrap: anywhere;
+}
+
+.ct-cards .card p {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   3. Formulário
+   ========================================= */
+
+.ct-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(40px, 8vw, 120px);
+    align-items: start;
+}
+
+.ct-intro .bloco-titulo {
+    max-width: 520px;
+    line-height: 1.15;
+}
+
+.ct-etiqueta {
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #60B9F5;
+}
+
+.ct-conteudo {
+    width: 100%;
+}
+
+.ct-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 32px;
+    border: 1px solid var(--line-blue);
+    border-radius: var(--radius);
+    background: var(--surface-blue);
+    box-sizing: border-box;
+}
+
+.ct-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.ct-campo label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.ct-campo input,
+.ct-campo select,
+.ct-campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line-blue);
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.ct-campo textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.ct-campo select option {
+    color: var(--black);
+}
+
+.ct-campo input:hover,
+.ct-campo select:hover,
+.ct-campo textarea:hover {
+    border-color: var(--blue-light);
+}
+
+.ct-campo input:focus,
+.ct-campo select:focus,
+.ct-campo textarea:focus {
+    border-color: var(--blue-light);
+    background-color: var(--surface-dark);
+}
+
+/* Consentimento */
+.ct-consentimento {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.ct-consentimento input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 4px 0 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.ct-consentimento label {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.ct-consentimento a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Mensagem de retorno */
+.ct-status {
+    min-height: 1.5em;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #FFB4B4;
+}
+
+.ct-status.ct-status-ok {
+    color: var(--blue-light);
+}
+
+
+/* =========================================
+   4. Responsividade: tablets
+   ========================================= */
+
+@media (max-width: 899px) {
+    .ct-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ct-intro .bloco-titulo {
+        max-width: 720px;
+    }
+}
+
+
+/* =========================================
+   5. Responsividade: tablets e celulares
+   ========================================= */
+
+@media (max-width: 768px) {
+    .ct-hero {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    /* Mesmo alinhamento de Sobre em telas menores */
+    .ct-hero-conteudo {
+        text-align: left;
+    }
+
+    .ct-hero-conteudo .bloco-titulo {
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    .ct-introducao {
+        margin: 0;
+        text-align: left;
+    }
+
+    .ct-form {
+        padding: 24px;
+    }
+}
+
+
+/* =========================================
+   6. Responsividade: celulares pequenos
+   ========================================= */
+
+@media (max-width: 480px) {
+    .ct-hero {
+        padding-top: 40px;
+        padding-bottom: 44px;
+    }
+
+    .ct-form {
+        padding: 22px 18px;
+    }
+
+    .ct-form .btn {
+        width: 100%;
+    }
+}
