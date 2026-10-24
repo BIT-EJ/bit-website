@@ -1,152 +1,395 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- basic meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- title -->
+
+    <!-- SEO -->
     <title>Política de Privacidade | BIT - Empresa Júnior de Computação</title>
-    <!-- description -->
-    <meta name="description" content="BIT - Desenvolvimento de soluções com qualidade profissional e visão inovadora de uma empresa júnior de Ciência da Computação.">
-    <!-- author -->
+    <meta name="description" content="Política de Privacidade da BIT, empresa júnior de Ciência da Computação da UNIOESTE. Saiba como coletamos, usamos e protegemos seus dados pessoais.">
     <meta name="author" content="BIT">
-    <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <!-- theme-color -->
-    <meta name="theme-color" content="#ffffff">
-    <!-- robots -->
     <meta name="robots" content="index, follow">
-    <!-- open graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bitej.com.br">
-    <meta property="og:title" content="BIT - Empresa Júnior de Ciência da Computação na UNIOESTE">
-    <meta property="og:description" content="Desenvolvimento de softwares, sites e soluções tecnológicas de qualidade com o selo acadêmico da UNIOESTE. Conheça nossos projetos!">
-    <meta property="og:image" content="/images/logo.png"> <!-- URL da imagem de capa (recomendado: 1200x630px) -->
-    <!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BIT - Empresa Júnior de Ciência da Computação na UNIOESTE">
-    <meta name="twitter:description" content="Desenvolvimento de softwares, sites e soluções tecnológicas de qualidade com o selo acadêmico da UNIOESTE.">
-    <meta name="twitter:image" content="/images/logo.png">
-    <!-- canonical -->
+    <meta name="theme-color" content="#0F172A">
+
     <link rel="canonical" href="https://www.bitej.com.br/politica-de-privacidade">
-    <!-- style -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bitej.com.br/politica-de-privacidade">
+    <meta property="og:title" content="Política de Privacidade | BIT - Empresa Júnior de Ciência da Computação">
+    <meta property="og:description" content="Saiba como a BIT coleta, usa e protege os dados pessoais de usuários e visitantes.">
+    <meta property="og:image" content="/images/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Política de Privacidade | BIT">
+    <meta name="twitter:description" content="Saiba como a BIT, empresa júnior de Ciência da Computação da UNIOESTE, trata os dados pessoais de usuários e visitantes.">
+    <meta name="twitter:image" content="/images/logo.png">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/pages/politica-de-privacidade.css">
 </head>
+
 <body>
-    <!-- header -->
+
+    <!-- HEADER -->
     <header class="site-header">
-        <a href="/" class="logo">
-            <svg class="logo-icon" width="181" height="222" viewBox="0 0 181 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M92.5 119L0.5 64.5V168L92.5 221.5V203V119ZM75.5 142.5L40.5 122.5V161.5L75.5 181.5V142.5Z" fill="#0A70B8"/>
-                <path d="M136.5 27.5L45.5 87.5L0.5 60.5L95.5 0.5L136.5 27.5Z" fill="#0A70B8"/>
-                <path d="M181 58L139 29L48.5 88.5L95.5 117L121.5 98.5V205.5L151.5 184.5V77.5L181 58Z" fill="#57585A"/>
-            </svg>
-            <span class="logo-text">BIT</span>
-        </a>
-        <nav class="nav">
-            <a href="/sobre" class="nav-btn">Sobre</a>
-            <!-- <a href="/blog" class="nav-btn">Blog</a> -->
-            <a href="/processo-seletivo" class="nav-btn">Processo Seletivo</a>
-        </nav>
+        <div class="container header-inner">
+
+            <a href="/" class="logo" aria-label="BIT - Página inicial">
+                <svg class="logo-icon"
+                     viewBox="0 0 181 222"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M92.5 119L0.5 64.5V168L92.5 221.5V203V119ZM75.5 142.5L40.5 122.5V161.5L75.5 181.5V142.5Z"
+                          fill="#0A70B8"/>
+                    <path d="M136.5 27.5L45.5 87.5L0.5 60.5L95.5 0.5L136.5 27.5Z"
+                          fill="#0A70B8"/>
+                    <path d="M181 58L139 29L48.5 88.5L95.5 117L121.5 98.5V205.5L151.5 184.5V77.5L181 58Z"
+                          fill="#57585A"/>
+                </svg>
+
+                <span class="logo-text">BIT</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="menu"
+                    aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="nav" id="menu" aria-label="Menu principal">
+                <a href="/sobre" class="nav-link">Sobre</a>
+                <a href="/servicos" class="nav-link">Serviços</a>
+                <a href="/projetos" class="nav-link">Projetos</a>
+                <a href="/equipe" class="nav-link">Equipe</a>
+                <a href="/faq" class="nav-link">FAQ</a>
+                <a href="/processo-seletivo" class="nav-link">Processo seletivo</a>
+
+                <a href="/contato" class="btn btn-primary btn-sm">
+                    Fale conosco
+                </a>
+            </nav>
+
+        </div>
     </header>
+
     <main>
-        <article>
-            <!-- hero-wrapper -->
-            <div class="hero-wrapper">
-                <div class="hero-content">
-                    <section>
-                        <h1>Política de Privacidade</h1>
-                        <h2 class="privacy-section-title">SEÇÃO 1 - INFORMAÇÕES GERAIS</h2>
-        <p class="privacy-text">A presente Política de Privacidade contém informações sobre coleta, uso, armazenamento, tratamento e proteção dos dados pessoais dos usuários e visitantes do site e sistemas da BIT (Empresa Júnior de Ciência da Computação da UNIOESTE), com a finalidade de demonstrar absoluta transparência quanto ao assunto e esclarecer a todos interessados sobre os tipos de dados que são coletados, os motivos da coleta e a forma como os usuários podem gerenciar ou excluir as suas informações pessoais.</p>
-        <p class="privacy-text">Esta Política de Privacidade aplica-se a todos os usuários e visitantes do site e sistemas da BIT, inscrita institucionalmente na Universidade Estadual do Oeste do Paraná (UNIOESTE), campus de Cascavel – PR, doravante nominada BIT.</p>
-        <p class="privacy-text">O presente documento foi elaborado em conformidade com a <a href="https://www.jusbrasil.com.br/legislacao/612902269/lei-13709-18" class="privacy-link" target="_blank" rel="noopener">Lei Geral de Proteção de Dados Pessoais</a> (Lei 13.709/18) e o <a href="https://www.jusbrasil.com.br/legislacao/117197216/lei-12965-14" class="privacy-link" target="_blank" rel="noopener">Marco Civil da Internet</a> (Lei 12.965/14). Ainda, o documento poderá ser atualizado em decorrência de eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção.</p>
-        <h2 class="privacy-section-title">SEÇÃO 2 - COMO RECOLHEMOS OS DADOS PESSOAIS DO USUÁRIO E DO VISITANTE?</h2>
-            <p class="privacy-text">Os dados pessoais do usuário e visitante são recolhidos pela plataforma da seguinte forma:</p>
-            <ul class="privacy-list">
-                <li class="privacy-list-item"><strong>Preenchimento de formulários:</strong> Quando o usuário preenche formulários de contato ou solicita serviços, fornecendo voluntariamente dados de identificação e contato, tais como nome completo, e-mail, número de telefone/WhatsApp e endereço comercial.</li>
-                <li class="privacy-list-item"><strong>Processos seletivos:</strong> Quando o usuário participa de processos seletivos, fornecendo dados necessários para a avaliação de candidatos interessados em integrar a equipe da BIT.</li>
-                <li class="privacy-list-item"><strong>Navegação:</strong> Quando o usuário acessa as páginas do site, coletando informações sobre interação, endereço IP, tipo de navegador, páginas acessadas, tempo de permanência e dados coletados por meio de cookies e tecnologias similares.</li>
-            </ul>
 
-            <h2 class="privacy-section-title">SEÇÃO 3 - QUAIS DADOS PESSOAIS RECOLHEMOS SOBRE O USUÁRIO E VISITANTE?</h2>
-            <p class="privacy-text">Os dados pessoais do usuário e visitante recolhidos são os seguintes:</p>
-            <ul class="privacy-list">
-                <li class="privacy-list-item"><strong>Dados de Identificação e Contato:</strong> Nome completo, e-mail, número de telefone/WhatsApp e endereço comercial.</li>
-                <li class="privacy-list-item"><strong>Dados Profissionais e Corporativos:</strong> Informações sobre o negócio do cliente, necessidades tecnológicas, escopo de projetos para desenvolvimento de websites ou sistemas, e dados para formalização de parcerias e contratos.</li>
-                <li class="privacy-list-item"><strong>Dados de Navegação:</strong> Endereço IP, tipo de navegador, páginas acessadas e tempo de permanência.</li>
-            </ul>
+        <!-- APRESENTAÇÃO -->
+        <section class="bloco pp-hero" id="inicio">
+            <div class="container">
 
-            <h2 class="privacy-section-title">SEÇÃO 4 - PARA QUE FINALIDADES UTILIZAMOS OS DADOS PESSOAIS DO USUÁRIO E VISITANTE?</h2>
-            <p class="privacy-text">Os dados pessoais do usuário e do visitante coletados e armazenados pela BIT têm por finalidade:</p>
-            <ul class="privacy-list">
-                <li class="privacy-list-item"><strong>Prestação de Serviços Tecnológicos:</strong> Desenvolvimento de websites, criação de aplicações web personalizadas, manutenção de sistemas, otimização de desempenho e serviços de consultoria em tecnologia.</li>
-                <li class="privacy-list-item"><strong>Atendimento e Comunicação:</strong> Responder a dúvidas, enviar propostas comerciais, prestar suporte técnico, gerenciar hospedagem de sistemas e manter contato comercial e institucional.</li>
-                <li class="privacy-list-item"><strong>Processos Seletivos:</strong> Avaliação de candidatos interessados em integrar a equipe de membros da BIT.</li>
-                <li class="privacy-list-item"><strong>Melhoria Contínua:</strong> Análise de métricas de acesso para aprimoramento de nossos canais digitais e experiência de navegação.</li>
-            </ul>
-        <h2 class="privacy-section-title">SEÇÃO 5 - POR QUANTO TEMPO OS DADOS PESSOAIS FICAM ARMAZENADOS?</h2>
-        <p class="privacy-text">Os dados pessoais do usuário e visitante são armazenados pela plataforma durante o período necessário para cumprir as finalidades para as quais foram coletados, respeitando os prazos legais aplicáveis e as obrigações contratuais assumidas, conforme o disposto no inciso I do artigo 15 da Lei 13.709/18.</p>
-        <p class="privacy-text">Os dados podem ser removidos ou anonimizados a pedido do usuário, excetuando os casos em que a lei oferecer outro tratamento.</p>
-        <h2 class="privacy-section-title">SEÇÃO 6 - SEGURANÇA DOS DADOS PESSOAIS ARMAZENADOS</h2>
-        <p class="privacy-text">A BIT adota medidas técnicas, administrativas e de segurança da informação adequadas para proteger seus dados contra acessos não autorizados, perda, destruição ou alteração indevida. Seus dados pessoais não serão comercializados, alugados ou transferidos a terceiros, exceto quando necessário para a execução dos serviços contratados ou mediante obrigação legal.</p>
-        <h2 class="privacy-section-title">SEÇÃO 7 - OS DADOS PESSOAIS ARMAZENADOS SERÃO TRANSFERIDOS A TERCEIROS?</h2>
-        <p class="privacy-text">Os dados pessoais podem ser compartilhados com terceiros estritamente na medida do necessário para permitir que eles realizem os serviços contratados (como provedores de hospedagem ou ferramentas de infraestrutura tecnológica) ou por obrigação legal.</p>
-        <h2 class="privacy-section-title">SEÇÃO 8 – COOKIES OU DADOS DE NAVEGAÇÃO</h2>
-        <p class="privacy-text">Os cookies referem-se a arquivos de texto enviados pela plataforma ao computador do usuário e visitante e que nele ficam armazenados, com informações relacionadas à navegação no site para otimização de desempenho e experiência do usuário.</p>
-        <p class="privacy-text">É possível redefinir seu navegador da web para recusar todos os cookies, porém alguns recursos da plataforma podem não funcionar corretamente se a capacidade de aceitar cookies estiver desabilitada.</p>
-        <h2 class="privacy-section-title">SEÇÃO 9 - CONSENTIMENTO E SEUS DIREITOS</h2>
-            <p class="privacy-text">Ao utilizar nossos serviços, navegar em nosso site ou entrar em contato conosco, você concorda com os termos descritos nesta política.</p>
-            <p class="privacy-text">Nos termos da LGPD, você possui direitos claros em relação aos seus dados pessoais, podendo solicitar à BIT a confirmação de tratamento, acesso, correção, anonimização, portabilidade ou eliminação de seus dados, bem como revogar o seu consentimento a qualquer momento.</p>
-            <div class="contact-box">
-                <p class="privacy-text"><strong>Canais de Atendimento Oficial:</strong></p>
-                <p class="privacy-text">E-mail: <a href="mailto:contato.bitej@gmail.com" class="privacy-link">contato.bitej@gmail.com</a></p>
-                <p class="privacy-text">Telefone / WhatsApp: +55 (45) 9 98247429</p>
-                <p class="privacy-text">Endereço: UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</p>
+                <div class="pp-hero-conteudo">
+                    <h1 class="bloco-titulo">
+                        Política de Privacidade.
+                    </h1>
+
+                    <p class="bloco-texto pp-introducao">
+                        Entenda quais dados pessoais a BIT coleta, por que
+                        os coleta, como os protege e como você pode
+                        gerenciá-los ou excluí-los.
+                    </p>
+                </div>
+
             </div>
-        <h2 class="privacy-section-title">SEÇÃO 10 - ALTERAÇÕES PARA ESSA POLÍTICA DE PRIVACIDADE</h2>
-        <p class="privacy-text">A BIT reserva-se o direito de atualizar ou modificar esta Política de Privacidade periodicamente para refletir melhorias em nossos processos e conformidade legal. A versão atualizada estará sempre disponível em nosso website oficial.</p>
-        <h2 class="privacy-section-title">SEÇÃO 11 – JURISDIÇÃO PARA RESOLUÇÃO DE CONFLITOS</h2>
-        <p class="privacy-text">Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.</p>
-        <p class="privacy-text">Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa (Cascavel – PR).</p>
-                    </section>
+        </section>
+
+        <!-- POLÍTICA -->
+        <section class="bloco pp-politica" id="politica">
+            <div class="container">
+
+                <div class="separador">
+                    <span>Política</span>
+                </div>
+
+                <div class="pp-layout">
+
+                    <!-- ÍNDICE -->
+                    <aside class="pp-indice" aria-label="Índice da política">
+                        <p class="pp-etiqueta">Índice</p>
+
+                        <ol>
+                            <li><a href="#informacoes-gerais">Informações gerais</a></li>
+                            <li><a href="#como-recolhemos">Como recolhemos os dados</a></li>
+                            <li><a href="#quais-dados">Quais dados recolhemos</a></li>
+                            <li><a href="#finalidades">Finalidades do uso dos dados</a></li>
+                            <li><a href="#armazenamento">Tempo de armazenamento</a></li>
+                            <li><a href="#seguranca">Segurança dos dados</a></li>
+                            <li><a href="#terceiros">Transferência a terceiros</a></li>
+                            <li><a href="#cookies">Cookies e dados de navegação</a></li>
+                            <li><a href="#consentimento">Consentimento e seus direitos</a></li>
+                            <li><a href="#alteracoes">Alterações nesta política</a></li>
+                            <li><a href="#jurisdicao">Jurisdição</a></li>
+                        </ol>
+                    </aside>
+
+                    <!-- CONTEÚDO -->
+                    <div class="pp-conteudo">
+
+                        <section class="pp-secao" id="informacoes-gerais">
+                            <h2>1. Informações gerais</h2>
+
+                            <p>A presente Política de Privacidade contém informações sobre coleta, uso, armazenamento, tratamento e proteção dos dados pessoais dos usuários e visitantes do site e sistemas da BIT (Empresa Júnior de Ciência da Computação da UNIOESTE), com a finalidade de demonstrar absoluta transparência quanto ao assunto e esclarecer a todos interessados sobre os tipos de dados que são coletados, os motivos da coleta e a forma como os usuários podem gerenciar ou excluir as suas informações pessoais.</p>
+
+                            <p>Esta Política de Privacidade aplica-se a todos os usuários e visitantes do site e sistemas da BIT, inscrita institucionalmente na Universidade Estadual do Oeste do Paraná (UNIOESTE), campus de Cascavel – PR, doravante nominada BIT.</p>
+
+                            <p>O presente documento foi elaborado em conformidade com a <a href="https://www.jusbrasil.com.br/legislacao/612902269/lei-13709-18" target="_blank" rel="noopener noreferrer">Lei Geral de Proteção de Dados Pessoais</a> (Lei 13.709/18) e o <a href="https://www.jusbrasil.com.br/legislacao/117197216/lei-12965-14" target="_blank" rel="noopener noreferrer">Marco Civil da Internet</a> (Lei 12.965/14). Ainda, o documento poderá ser atualizado em decorrência de eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção.</p>
+                        </section>
+
+                        <section class="pp-secao" id="como-recolhemos">
+                            <h2>2. Como recolhemos os dados pessoais do usuário e do visitante?</h2>
+
+                            <p>Os dados pessoais do usuário e visitante são recolhidos pela plataforma da seguinte forma:</p>
+
+                            <ul>
+                                <li><strong>Preenchimento de formulários:</strong> Quando o usuário preenche formulários de contato ou solicita serviços, fornecendo voluntariamente dados de identificação e contato, tais como nome completo, e-mail, número de telefone/WhatsApp e endereço comercial.</li>
+                                <li><strong>Processos seletivos:</strong> Quando o usuário participa de processos seletivos, fornecendo dados necessários para a avaliação de candidatos interessados em integrar a equipe da BIT.</li>
+                                <li><strong>Navegação:</strong> Quando o usuário acessa as páginas do site, coletando informações sobre interação, endereço IP, tipo de navegador, páginas acessadas, tempo de permanência e dados coletados por meio de cookies e tecnologias similares.</li>
+                            </ul>
+                        </section>
+
+                        <section class="pp-secao" id="quais-dados">
+                            <h2>3. Quais dados pessoais recolhemos sobre o usuário e visitante?</h2>
+
+                            <p>Os dados pessoais do usuário e visitante recolhidos são os seguintes:</p>
+
+                            <ul>
+                                <li><strong>Dados de Identificação e Contato:</strong> Nome completo, e-mail, número de telefone/WhatsApp e endereço comercial.</li>
+                                <li><strong>Dados Profissionais e Corporativos:</strong> Informações sobre o negócio do cliente, necessidades tecnológicas, escopo de projetos para desenvolvimento de websites ou sistemas, e dados para formalização de parcerias e contratos.</li>
+                                <li><strong>Dados de Navegação:</strong> Endereço IP, tipo de navegador, páginas acessadas e tempo de permanência.</li>
+                            </ul>
+                        </section>
+
+                        <section class="pp-secao" id="finalidades">
+                            <h2>4. Para que finalidades utilizamos os dados pessoais do usuário e visitante?</h2>
+
+                            <p>Os dados pessoais do usuário e do visitante coletados e armazenados pela BIT têm por finalidade:</p>
+
+                            <ul>
+                                <li><strong>Prestação de Serviços Tecnológicos:</strong> Desenvolvimento de websites, criação de aplicações web personalizadas, manutenção de sistemas, otimização de desempenho e serviços de consultoria em tecnologia.</li>
+                                <li><strong>Atendimento e Comunicação:</strong> Responder a dúvidas, enviar propostas comerciais, prestar suporte técnico, gerenciar hospedagem de sistemas e manter contato comercial e institucional.</li>
+                                <li><strong>Processos Seletivos:</strong> Avaliação de candidatos interessados em integrar a equipe de membros da BIT.</li>
+                                <li><strong>Melhoria Contínua:</strong> Análise de métricas de acesso para aprimoramento de nossos canais digitais e experiência de navegação.</li>
+                            </ul>
+                        </section>
+
+                        <section class="pp-secao" id="armazenamento">
+                            <h2>5. Por quanto tempo os dados pessoais ficam armazenados?</h2>
+
+                            <p>Os dados pessoais do usuário e visitante são armazenados pela plataforma durante o período necessário para cumprir as finalidades para as quais foram coletados, respeitando os prazos legais aplicáveis e as obrigações contratuais assumidas, conforme o disposto no inciso I do artigo 15 da Lei 13.709/18.</p>
+
+                            <p>Os dados podem ser removidos ou anonimizados a pedido do usuário, excetuando os casos em que a lei oferecer outro tratamento.</p>
+                        </section>
+
+                        <section class="pp-secao" id="seguranca">
+                            <h2>6. Segurança dos dados pessoais armazenados</h2>
+
+                            <p>A BIT adota medidas técnicas, administrativas e de segurança da informação adequadas para proteger seus dados contra acessos não autorizados, perda, destruição ou alteração indevida. Seus dados pessoais não serão comercializados, alugados ou transferidos a terceiros, exceto quando necessário para a execução dos serviços contratados ou mediante obrigação legal.</p>
+                        </section>
+
+                        <section class="pp-secao" id="terceiros">
+                            <h2>7. Os dados pessoais armazenados serão transferidos a terceiros?</h2>
+
+                            <p>Os dados pessoais podem ser compartilhados com terceiros estritamente na medida do necessário para permitir que eles realizem os serviços contratados (como provedores de hospedagem ou ferramentas de infraestrutura tecnológica) ou por obrigação legal.</p>
+                        </section>
+
+                        <section class="pp-secao" id="cookies">
+                            <h2>8. Cookies ou dados de navegação</h2>
+
+                            <p>Os cookies referem-se a arquivos de texto enviados pela plataforma ao computador do usuário e visitante e que nele ficam armazenados, com informações relacionadas à navegação no site para otimização de desempenho e experiência do usuário.</p>
+
+                            <p>É possível redefinir seu navegador da web para recusar todos os cookies, porém alguns recursos da plataforma podem não funcionar corretamente se a capacidade de aceitar cookies estiver desabilitada.</p>
+                        </section>
+
+                        <section class="pp-secao" id="consentimento">
+                            <h2>9. Consentimento e seus direitos</h2>
+
+                            <p>Ao utilizar nossos serviços, navegar em nosso site ou entrar em contato conosco, você concorda com os termos descritos nesta política.</p>
+
+                            <p>Nos termos da LGPD, você possui direitos claros em relação aos seus dados pessoais, podendo solicitar à BIT a confirmação de tratamento, acesso, correção, anonimização, portabilidade ou eliminação de seus dados, bem como revogar o seu consentimento a qualquer momento.</p>
+
+                            <div class="pp-contato">
+                                <p><strong>Canais de Atendimento Oficial:</strong></p>
+                                <p>E-mail: <a href="mailto:contato.bitej@gmail.com">contato.bitej@gmail.com</a></p>
+                                <p>Telefone / WhatsApp: +55 (45) 9 98247429</p>
+                                <p>Endereço: UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</p>
+                            </div>
+                        </section>
+
+                        <section class="pp-secao" id="alteracoes">
+                            <h2>10. Alterações para esta Política de Privacidade</h2>
+
+                            <p>A BIT reserva-se o direito de atualizar ou modificar esta Política de Privacidade periodicamente para refletir melhorias em nossos processos e conformidade legal. A versão atualizada estará sempre disponível em nosso website oficial.</p>
+                        </section>
+
+                        <section class="pp-secao" id="jurisdicao">
+                            <h2>11. Jurisdição para resolução de conflitos</h2>
+
+                            <p>Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.</p>
+
+                            <p>Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa (Cascavel – PR).</p>
+                        </section>
+
+                    </div>
                 </div>
             </div>
-        </article>
+        </section>
+
     </main>
-    <!-- footer -->
+
+    <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Contato</h4>
-                <p>Segunda a sexta, das 08:00 às 18:00</p>
-                <a href="mailto:contato.bitej@gmail.com" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;contato.bitej@gmail.com</a>
-                <a href="tel:+5545998247429" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;+55 (45) 9 98247429</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/place/BIT+%E2%80%93+Empresa+J%C3%BAnior+de+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o/@-24.9881747,-53.4495957,166m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50001ca08b3:0xaf7a4dd297e8c220!8m2!3d-24.9881759!4d-53.448952!16s%2Fg%2F11nvt8__kl?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D" class="link"><img class="invert link-icon" src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Layout Dashboard" width="16" height="20">&nbsp;&nbsp;UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</a>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-col">
+                    <h2>Contato</h2>
+
+                    <p>Segunda a sexta, das 08:00 às 18:00</p>
+
+                    <a href="mailto:contato.bitej@gmail.com">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/mail.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        contato.bitej@gmail.com
+                    </a>
+
+                    <a href="tel:+5545998247429">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/phone.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        +55 (45) 9 98247429
+                    </a>
+
+                    <a href="https://www.google.com/maps/place/BIT+%E2%80%93+Empresa+J%C3%BAnior+de+Ci%C3%AAncia+da+Computa%C3%A7%C3%A3o/@-24.9881747,-53.4495957,166m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94f3d50001ca08b3:0xaf7a4dd297e8c220!8m2!3d-24.9881759!4d-53.448952!16s%2Fg%2F11nvt8__kl"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="https://unpkg.com/lucide-static@0.452.0/icons/map-pin.svg"
+                             alt=""
+                             width="16"
+                             height="20">
+                        UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil
+                    </a>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Institucional</h2>
+
+                    <a href="/sobre">Sobre</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/politica-de-privacidade">Política de Privacidade</a>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Redes sociais</h2>
+
+                    <a href="https://wa.me/554598247429"
+                       target="_blank"
+                       rel="noopener noreferrer">WhatsApp</a>
+
+                    <a href="https://br.linkedin.com/company/bitej"
+                       target="_blank"
+                       rel="noopener noreferrer">LinkedIn</a>
+
+                    <a href="https://www.instagram.com/bit.empresajunior"
+                       target="_blank"
+                       rel="noopener noreferrer">Instagram</a>
+
+                    <a href="https://www.facebook.com/bitempresajunior"
+                       target="_blank"
+                       rel="noopener noreferrer">Facebook</a>
+
+                    <a href="https://www.youtube.com/@bitempresajunior9170"
+                       target="_blank"
+                       rel="noopener noreferrer">YouTube</a>
+                </div>
+
             </div>
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <a href="/politica-de-privacidade" class="link">Política de Privacidade</a>
-                <a href="/sobre" class="link">Sobre</a>
-                <!-- <a href="/blog" class="link">Blog</a> -->
+
+            <div class="footer-bottom">
+                <p>
+                    © 2016-<span id="ano-atual">2026</span> BIT.
+                    Todos os direitos reservados.
+                </p>
+
+                <a href="#inicio">Voltar ao topo ↑</a>
             </div>
-            <div class="footer-col">
-                <h4>Redes sociais</h4>
-                <a target="_blank" rel="noopener noreferrer" href="https://wa.me/554598247429" class="link">Whatsapp</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://br.linkedin.com/company/bitej" class="link">LinkedIn</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bit.empresajunior" class="link">Instagram</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/bitempresajunior" class="link">Facebook</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@bitempresajunior9170" class="link">Youtube</a>
-            </div>
-        </div>
-        <hr class="footer-divider">
-        <div class="footer-bottom">
-            <p class="copyright">
-                © 2016-<script>document.write(new Date().getFullYear())</script> BIT. All rights reserved.
-            </p>
-            <a href="#" class="back-to-top link">Voltar ao topo ↑</a>
+
         </div>
     </footer>
-    <!-- instant.page -->
-    <script src="/scripts/instant.page.js" type="module" defer></script>
+
+    <!-- SCRIPTS -->
+    <script src="/scripts/instant.page.js"></script>
+
+    <script>
+        // Atualiza o ano do rodapé.
+        document.getElementById('ano-atual').textContent =
+            new Date().getFullYear();
+
+        // Menu responsivo.
+        (function () {
+            var botao = document.getElementById('menu-toggle');
+            var menu = document.getElementById('menu');
+
+            function definirMenu(aberto) {
+                menu.classList.toggle('aberto', aberto);
+
+                botao.setAttribute(
+                    'aria-expanded',
+                    String(aberto)
+                );
+
+                botao.setAttribute(
+                    'aria-label',
+                    aberto ? 'Fechar menu' : 'Abrir menu'
+                );
+
+                botao.textContent = aberto ? '✕' : '☰';
+            }
+
+            botao.addEventListener('click', function () {
+                definirMenu(
+                    botao.getAttribute('aria-expanded') !== 'true'
+                );
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    definirMenu(false);
+                });
+            });
+
+            document.addEventListener('click', function (evento) {
+                if (!evento.target.closest('.site-header')) {
+                    definirMenu(false);
+                }
+            });
+
+            document.addEventListener('keydown', function (evento) {
+                if (evento.key === 'Escape') {
+                    definirMenu(false);
+                    botao.focus();
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
