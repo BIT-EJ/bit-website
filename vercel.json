@@ -25,6 +25,10 @@
       "destination": "/pages/edital-processo-seletivo.html"
     },
     {
+      "source": "/contato",
+      "destination": "/pages/contato.html"
+    },
+    {
       "source": "/politica-de-privacidade",
       "destination": "/pages/politica-de-privacidade.html"
     },
