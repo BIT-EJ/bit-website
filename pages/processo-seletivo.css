@@ -1,0 +1,203 @@
+/* =========================================
+   PROCESSO SELETIVO - BIT Empresa Júnior
+   Estilo complementar ao CSS geral do site
+   ========================================= */
+
+
+/* =========================================
+   1. Apresentação
+   Mesmo padrão visual da introdução de Sobre
+   ========================================= */
+
+.ps-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.ps-hero-conteudo {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ps-hero-conteudo .bloco-titulo {
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.ps-introducao {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* =========================================
+   2. Seções (inscrições e edital)
+   ========================================= */
+
+.ps-inscricoes,
+.ps-edital {
+    position: relative;
+    padding-top: clamp(40px, 6vw, 72px);
+    background: transparent;
+}
+
+.ps-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(40px, 8vw, 120px);
+    align-items: start;
+}
+
+.ps-intro .bloco-titulo {
+    max-width: 520px;
+    line-height: 1.15;
+}
+
+.ps-etiqueta {
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #60B9F5;
+}
+
+
+/* =========================================
+   3. Cartão de conteúdo
+   Mesmo padrão da citação de Sobre
+   ========================================= */
+
+.ps-conteudo {
+    width: 100%;
+}
+
+.ps-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px 32px;
+    border: 1px solid var(--line-blue);
+    border-radius: var(--radius);
+    background: var(--surface-blue);
+    box-sizing: border-box;
+}
+
+.ps-card p {
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+.ps-card p:first-child {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.ps-card .btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   4. Botão desativado (inscrições encerradas)
+   ========================================= */
+
+.btn-desativado {
+    background-color: color-mix(in srgb, var(--white) 12%, transparent);
+    border-color: color-mix(in srgb, var(--white) 20%, transparent);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* =========================================
+   5. Responsividade: tablets
+   ========================================= */
+
+@media (max-width: 899px) {
+    .ps-hero {
+        min-height: auto;
+    }
+
+    .ps-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ps-intro .bloco-titulo {
+        max-width: 720px;
+    }
+}
+
+
+/* =========================================
+   6. Responsividade: tablets e celulares
+   ========================================= */
+
+@media (max-width: 768px) {
+    .ps-hero {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    /* Mesmo alinhamento de Sobre em telas menores */
+    .ps-hero-conteudo {
+        text-align: left;
+    }
+
+    .ps-hero-conteudo .bloco-titulo {
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    .ps-introducao {
+        margin: 0;
+        text-align: left;
+    }
+
+    .ps-card {
+        padding: 24px;
+    }
+}
+
+
+/* =========================================
+   7. Responsividade: celulares pequenos
+   ========================================= */
+
+@media (max-width: 480px) {
+    .ps-hero {
+        padding-top: 40px;
+        padding-bottom: 44px;
+    }
+
+    .ps-card {
+        padding: 22px 18px;
+    }
+
+    .ps-card p {
+        font-size: 0.98rem;
+        line-height: 1.8;
+    }
+
+    .ps-card .btn {
+        width: 100%;
+    }
+}
