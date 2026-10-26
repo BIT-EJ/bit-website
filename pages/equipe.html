@@ -37,6 +37,18 @@
 
     <!-- CSS específico da equipe -->
     <link rel="stylesheet" href="/pages/equipe.css">
+
+    <style>
+        /* Professor centralizado acima dos demais (apenas desktop/tablet) */
+        @media (min-width: 768px) {
+            .equipe-card-professor {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -114,7 +126,7 @@
                 <div class="equipe-grid">
 
                     <!-- Professor -->
-                    <article class="equipe-card">
+                    <article class="equipe-card equipe-card-professor">
                         <div class="equipe-foto">
                             <img
                                 src="/images/equipe/integrante-0.jpeg"
