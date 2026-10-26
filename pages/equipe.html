@@ -39,13 +39,28 @@
     <link rel="stylesheet" href="/pages/equipe.css">
 
     <style>
-        /* Professor centralizado acima dos demais (apenas desktop/tablet) */
-        @media (min-width: 768px) {
+        /*
+          Professor centralizado acima dos demais (apenas desktop).
+          O card ocupa a linha inteira, mas com a largura de UMA coluna,
+          igual aos outros cards.
+
+          Ajuste as duas variáveis abaixo para bater com o equipe.css:
+          --equipe-colunas: quantidade de colunas da grade no desktop
+          --equipe-gap: espaçamento (gap) entre as colunas
+        */
+        @media (min-width: 1024px) {
+            .equipe-grid {
+                --equipe-colunas: 3;
+                --equipe-gap: 2rem;
+            }
+
             .equipe-card-professor {
                 grid-column: 1 / -1;
                 justify-self: center;
-                width: 100%;
-                max-width: 320px;
+                width: calc(
+                    (100% - (var(--equipe-colunas) - 1) * var(--equipe-gap))
+                    / var(--equipe-colunas)
+                );
             }
         }
     </style>
