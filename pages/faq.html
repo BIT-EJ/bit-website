@@ -364,13 +364,13 @@
 
             perguntas.forEach(function (pergunta) {
                 pergunta.addEventListener('toggle', function () {
-                    if (!pergunta.open) return;
-
                     perguntas.forEach(function (outra) {
                         if (outra !== pergunta) {
                             outra.open = false;
                         }
                     });
+
+                    if (!pergunta.open) return;
                 });
             });
         })();
