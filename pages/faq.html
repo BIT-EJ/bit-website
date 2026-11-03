@@ -358,19 +358,21 @@
             });
         })();
 
-        // Fecha uma resposta quando outra abre
+        // Fecha todas as outras FAQs antes de abrir a selecionada
         (function () {
             var perguntas = document.querySelectorAll('.faq-item');
 
             perguntas.forEach(function (pergunta) {
-                pergunta.addEventListener('toggle', function () {
-                    perguntas.forEach(function (outra) {
-                        if (outra !== pergunta) {
-                            outra.open = false;
-                        }
-                    });
+                var summary = pergunta.querySelector('summary');
 
-                    if (!pergunta.open) return;
+                summary.addEventListener('click', function () {
+                    if (!pergunta.open) {
+                        perguntas.forEach(function (outra) {
+                            if (outra !== pergunta) {
+                                outra.open = false;
+                            }
+                        });
+                    }
                 });
             });
         })();
