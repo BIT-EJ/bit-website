@@ -32,7 +32,7 @@
 
 
 /* =========================================
-   2. Canais de atendimento
+   Canais de atendimento
    Reaproveita .cards, .card e .card-icone
    ========================================= */
 
@@ -67,7 +67,7 @@
 
 
 /* =========================================
-   3. Formulário
+   Formulário
    ========================================= */
 
 .ct-grid {
@@ -201,7 +201,7 @@
 
 
 /* =========================================
-   4. Responsividade: tablets
+   Responsividade: tablets
    ========================================= */
 
 @media (max-width: 899px) {
@@ -217,7 +217,7 @@
 
 
 /* =========================================
-   5. Responsividade: tablets e celulares
+   Responsividade: tablets e celulares
    ========================================= */
 
 @media (max-width: 768px) {
@@ -248,7 +248,7 @@
 
 
 /* =========================================
-   6. Responsividade: celulares pequenos
+   Responsividade: celulares pequenos
    ========================================= */
 
 @media (max-width: 480px) {
