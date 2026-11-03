@@ -688,7 +688,7 @@ main {
 
 .footer-col a {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   width: fit-content;
   margin-bottom: 10px;
