@@ -32,6 +32,42 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/style.css">
+
+    <!-- Ícone animado do menu mobile (sanduíche → X) -->
+    <style>
+        .menu-icon {
+            position: relative;
+            display: block;
+            width: 28px;
+            height: 28px;
+        }
+
+        .menu-line {
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            border-radius: 8px;
+            background: currentColor;
+            transition: .15s;
+        }
+
+        .menu-line.top    { top: 18%; }
+        .menu-line.middle { top: 48%; }
+        .menu-line.bottom { top: 78%; }
+
+        /* Estado aberto: vira X */
+        .menu-toggle.close .menu-line.top {
+            transform: rotate(45deg);
+            top: 48%;
+        }
+
+        .menu-toggle.close .menu-line.middle,
+        .menu-toggle.close .menu-line.bottom {
+            transform: rotate(-45deg);
+            top: 48%;
+        }
+    </style>
 </head>
 <body>
     <!-- ===================== HEADER ===================== -->
@@ -46,7 +82,13 @@
                 <span class="logo-text">BIT</span>
             </a>
 
-            <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+                <span class="menu-icon" aria-hidden="true">
+                    <span class="menu-line top"></span>
+                    <span class="menu-line middle"></span>
+                    <span class="menu-line bottom"></span>
+                </span>
+            </button>
 
             <nav class="nav" id="menu" aria-label="Menu principal">
                 <a href="#sobre" class="nav-link">Sobre</a>
@@ -360,6 +402,7 @@
 
             function definirMenu(aberto) {
                 menu.classList.toggle('aberto', aberto);
+                botao.classList.toggle('close', aberto);
                 botao.setAttribute('aria-expanded', aberto);
                 botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
             }
