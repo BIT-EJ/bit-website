@@ -38,11 +38,9 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     <header class="site-header">
         <div class="container header-inner">
-
             <a href="/" class="logo" aria-label="BIT - Página inicial">
                 <svg class="logo-icon"
                      viewBox="0 0 181 222"
@@ -85,16 +83,13 @@
                     Fale conosco
                 </a>
             </nav>
-
         </div>
     </header>
 
     <main>
-
         <!-- APRESENTAÇÃO -->
         <section class="bloco ct-hero" id="inicio">
             <div class="container">
-
                 <div class="ct-hero-conteudo">
                     <h1 class="bloco-titulo">
                         Fale com a BIT.
@@ -107,20 +102,17 @@
                         mais rápido possível. Horário de atendimento: Segunda a sexta, das 08:00 às 18:00.
                     </p>
                 </div>
-
             </div>
         </section>
 
         <!-- CANAIS -->
         <section class="bloco ct-canais" id="canais">
             <div class="container">
-
                 <div class="separador">
                     <span>Canais de atendimento</span>
                 </div>
 
                 <div class="cards ct-cards">
-
                     <a class="card card-icone ct-card-link"
                        href="mailto:contato.bitej@gmail.com">
                         <span class="icone">
@@ -180,22 +172,18 @@
                             <p>UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</p>
                         </div>
                     </a>
-
                 </div>
-
             </div>
         </section>
 
         <!-- FORMULÁRIO -->
         <section class="bloco ct-mensagem" id="mensagem">
             <div class="container">
-
                 <div class="separador">
                     <span>Mensagem</span>
                 </div>
 
                 <div class="ct-grid">
-
                     <div class="ct-intro">
                         <p class="ct-etiqueta">Envie sua mensagem</p>
 
@@ -212,7 +200,6 @@
 
                     <div class="ct-conteudo">
                         <form class="ct-form" id="form-contato" novalidate>
-
                             <div class="ct-campo">
                                 <label for="nome">Nome completo</label>
                                 <input type="text"
@@ -269,22 +256,17 @@
                             <button type="submit" class="btn btn-primary">
                                 Enviar mensagem
                             </button>
-
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-
             <div class="footer-grid">
-
                 <div class="footer-col">
                     <h2>Contato</h2>
 
@@ -344,7 +326,6 @@
                        target="_blank"
                        rel="noopener noreferrer">Facebook</a>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
@@ -355,17 +336,16 @@
 
                 <a href="#inicio">Voltar ao topo ↑</a>
             </div>
-
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        // Atualiza o ano do rodapé.
+        // Ano no rodapé
         document.getElementById('ano-atual').textContent =
             new Date().getFullYear();
 
-        // Menu responsivo.
+        // Menu responsivo
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
@@ -412,7 +392,7 @@
             });
         })();
 
-        // Formulário: valida e abre o aplicativo de e-mail com a mensagem pronta.
+        // Formulário
         (function () {
             var form = document.getElementById('form-contato');
             var status = document.getElementById('form-status');

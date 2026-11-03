@@ -38,16 +38,8 @@
     <!-- CSS específico da equipe -->
     <link rel="stylesheet" href="/pages/equipe.css">
 
+    <!-- Professor -->
     <style>
-        /*
-          Professor centralizado acima dos demais (apenas desktop).
-          O card ocupa a linha inteira, mas com a largura de UMA coluna,
-          igual aos outros cards.
-
-          Ajuste as duas variáveis abaixo para bater com o equipe.css:
-          --equipe-colunas: quantidade de colunas da grade no desktop
-          --equipe-gap: espaçamento (gap) entre as colunas
-        */
         @media (min-width: 1024px) {
             .equipe-grid {
                 --equipe-colunas: 3;
@@ -67,11 +59,9 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     <header class="site-header">
         <div class="container header-inner">
-
             <a href="/" class="logo"
                aria-label="BIT - Página inicial">
 
@@ -113,16 +103,13 @@
                     Fale conosco
                 </a>
             </nav>
-
         </div>
     </header>
 
     <main>
-
         <!-- EQUIPE -->
         <section class="bloco equipe-section" id="inicio">
             <div class="container">
-
                 <!-- Introdução -->
                 <div class="equipe-intro">
                     <h1 class="bloco-titulo">
@@ -139,7 +126,6 @@
 
                 <!-- Grade de integrantes -->
                 <div class="equipe-grid">
-
                     <!-- Professor -->
                     <article class="equipe-card equipe-card-professor">
                         <div class="equipe-foto">
@@ -309,10 +295,8 @@
                             <p>Trainee</p>
                         </div>
                     </article>
-
                 </div>
 
-                <!-- Chamada para ação -->
                 <div class="bloco-acao equipe-cta">
                     <p>
                         Quer fazer parte da BIT e desenvolver projetos
@@ -337,18 +321,14 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
-
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-
             <div class="footer-grid">
-
                 <div class="footer-col">
                     <h2>Contato</h2>
 
@@ -411,7 +391,6 @@
                         Facebook
                     </a>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
@@ -422,17 +401,16 @@
 
                 <a href="#inicio">Voltar ao topo ↑</a>
             </div>
-
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        // Atualiza o ano do rodapé.
+        // Ano no rodapé
         document.getElementById('ano-atual').textContent =
             new Date().getFullYear();
 
-        // Menu responsivo.
+        // Menu responsivo
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
