@@ -34,9 +34,44 @@
 
     <!-- CSS compartilhado -->
     <link rel="stylesheet" href="/style.css">
-
-    <!-- CSS específico da equipe -->
     <link rel="stylesheet" href="/pages/equipe.css">
+
+    <!-- Ícone animado do menu mobile (sanduíche → X) -->
+    <style>
+        .menu-icon {
+            --menu-icon-size: 24px;
+            position: relative;
+            display: block;
+            width: var(--menu-icon-size);
+            height: var(--menu-icon-size);
+        }
+
+        .menu-line {
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            border-radius: 8px;
+            background: currentColor;
+            transition: .15s;
+        }
+
+        .menu-line.top    { top: 18%; }
+        .menu-line.middle { top: 48%; }
+        .menu-line.bottom { top: 78%; }
+
+        /* Estado aberto: vira X */
+        .menu-toggle.close .menu-line.top {
+            transform: rotate(45deg);
+            top: 48%;
+        }
+
+        .menu-toggle.close .menu-line.middle,
+        .menu-toggle.close .menu-line.bottom {
+            transform: rotate(-45deg);
+            top: 48%;
+        }
+    </style>
 
     <!-- Professor -->
     <style>
@@ -410,47 +445,32 @@
         document.getElementById('ano-atual').textContent =
             new Date().getFullYear();
 
-        // Menu responsivo
+        // Menu mobile
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
 
             function definirMenu(aberto) {
                 menu.classList.toggle('aberto', aberto);
-
-                botao.setAttribute(
-                    'aria-expanded',
-                    String(aberto)
-                );
-
-                botao.setAttribute(
-                    'aria-label',
-                    aberto ? 'Fechar menu' : 'Abrir menu'
-                );
-
-                botao.textContent = aberto ? '✕' : '☰';
+                botao.classList.toggle('close', aberto);
+                botao.setAttribute('aria-expanded', aberto);
+                botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
             }
 
             botao.addEventListener('click', function () {
-                definirMenu(
-                    botao.getAttribute('aria-expanded') !== 'true'
-                );
+                definirMenu(botao.getAttribute('aria-expanded') !== 'true');
             });
 
             menu.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    definirMenu(false);
-                });
+                link.addEventListener('click', function () { definirMenu(false); });
             });
 
-            document.addEventListener('click', function (evento) {
-                if (!evento.target.closest('.site-header')) {
-                    definirMenu(false);
-                }
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.site-header')) definirMenu(false);
             });
 
-            document.addEventListener('keydown', function (evento) {
-                if (evento.key === 'Escape') {
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
                     definirMenu(false);
                     botao.focus();
                 }
