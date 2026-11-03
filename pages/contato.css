@@ -1,14 +1,3 @@
-/* =========================================
-   CONTATO - BIT Empresa Júnior
-   Estilo complementar ao CSS geral do site
-   ========================================= */
-
-
-/* =========================================
-   1. Apresentação
-   Mesmo padrão visual da introdução de Sobre
-   ========================================= */
-
 .ct-hero {
     position: relative;
     display: flex;
