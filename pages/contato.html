@@ -128,9 +128,8 @@
 
                     <p class="bloco-texto ct-introducao">
                         Tem um projeto, uma dúvida ou quer solicitar um
-                        orçamento? Escolha o canal que preferir ou envie
-                        uma mensagem pelo formulário e retornaremos o
-                        mais rápido possível. Horário de atendimento: Segunda a sexta, das 08:00 às 18:00.
+                        orçamento? Escolha o canal que preferir e entre
+                        em contato conosco. Horário de atendimento: Segunda a sexta, das 08:00 às 18:00.
                     </p>
                 </div>
             </div>
@@ -203,92 +202,6 @@
                             <p>UNIOESTE, Bloco F, Sala 7, Cascavel – PR, Brasil</p>
                         </div>
                     </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FORMULÁRIO -->
-        <section class="bloco ct-mensagem" id="mensagem">
-            <div class="container">
-                <div class="separador">
-                    <span>Mensagem</span>
-                </div>
-
-                <div class="ct-grid">
-                    <div class="ct-intro">
-                        <p class="ct-etiqueta">Envie sua mensagem</p>
-
-                        <h2 class="bloco-titulo">
-                            Conte-nos sobre o seu projeto.
-                        </h2>
-
-                        <p class="bloco-texto">
-                            Preencha o formulário e sua mensagem será
-                            aberta no seu aplicativo de e-mail, pronta
-                            para envio à nossa equipe.
-                        </p>
-                    </div>
-
-                    <div class="ct-conteudo">
-                        <form class="ct-form" id="form-contato" novalidate>
-                            <div class="ct-campo">
-                                <label for="nome">Nome completo</label>
-                                <input type="text"
-                                       id="nome"
-                                       name="nome"
-                                       autocomplete="name"
-                                       required>
-                            </div>
-
-                            <div class="ct-campo">
-                                <label for="email">E-mail</label>
-                                <input type="email"
-                                       id="email"
-                                       name="email"
-                                       autocomplete="email"
-                                       required>
-                            </div>
-
-                            <div class="ct-campo">
-                                <label for="assunto">Assunto</label>
-                                <select id="assunto" name="assunto" required>
-                                    <option value="">Selecione um assunto</option>
-                                    <option>Solicitar orçamento</option>
-                                    <option>Dúvida sobre serviços</option>
-                                    <option>Parceria</option>
-                                    <option>Processo seletivo</option>
-                                    <option>Outro</option>
-                                </select>
-                            </div>
-
-                            <div class="ct-campo">
-                                <label for="mensagem-texto">Mensagem</label>
-                                <textarea id="mensagem-texto"
-                                          name="mensagem"
-                                          rows="6"
-                                          required></textarea>
-                            </div>
-
-                            <div class="ct-consentimento">
-                                <input type="checkbox"
-                                       id="consentimento"
-                                       name="consentimento"
-                                       required>
-                                <label for="consentimento">
-                                    Li e concordo com a
-                                    <a href="/politica-de-privacidade"
-                                       target="_blank"
-                                       rel="noopener noreferrer">Política de Privacidade</a>.
-                                </label>
-                            </div>
-
-                            <p class="ct-status" id="form-status" role="status" aria-live="polite"></p>
-
-                            <button type="submit" class="btn btn-primary">
-                                Enviar mensagem
-                            </button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </section>
@@ -405,54 +318,6 @@
                     definirMenu(false);
                     botao.focus();
                 }
-            });
-        })();
-
-        // Formulário
-        (function () {
-            var form = document.getElementById('form-contato');
-            var status = document.getElementById('form-status');
-            var destino = 'contato.bitej@gmail.com';
-
-            form.addEventListener('submit', function (evento) {
-                evento.preventDefault();
-
-                var nome = form.nome.value.trim();
-                var email = form.email.value.trim();
-                var assunto = form.assunto.value;
-                var mensagem = form.mensagem.value.trim();
-
-                status.classList.remove('ct-status-ok');
-
-                if (!nome || !email || !assunto || !mensagem) {
-                    status.textContent = 'Preencha todos os campos.';
-                    return;
-                }
-
-                if (!form.email.checkValidity()) {
-                    status.textContent = 'Informe um e-mail válido.';
-                    return;
-                }
-
-                if (!form.consentimento.checked) {
-                    status.textContent =
-                        'É necessário concordar com a Política de Privacidade.';
-                    return;
-                }
-
-                var corpo =
-                    'Nome: ' + nome + '\n' +
-                    'E-mail: ' + email + '\n\n' +
-                    mensagem;
-
-                window.location.href =
-                    'mailto:' + destino +
-                    '?subject=' + encodeURIComponent('[Site] ' + assunto) +
-                    '&body=' + encodeURIComponent(corpo);
-
-                status.classList.add('ct-status-ok');
-                status.textContent =
-                    'Abrindo seu aplicativo de e-mail para finalizar o envio.';
             });
         })();
     </script>
