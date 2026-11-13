@@ -407,23 +407,17 @@
             var McBar1 = McButton.find("b:nth-child(1)");
             var McBar3 = McButton.find("b:nth-child(3)");
 
-            // Anima o ícone SEMPRE para valores absolutos do estado final (hambúrguer ou X).
-            // Antes de começar, interrompe qualquer animação em andamento e limpa a fila,
-            // assim cliques rápidos nunca acumulam nem conflitam, e o ícone sempre
-            // termina no estado correto.
             function animarIcone(aberto) {
                 McButton.velocity("stop", true);
                 McBar1.velocity("stop", true);
                 McBar3.velocity("stop", true);
 
                 if (aberto) {
-                    // Hambúrguer → X
                     McBar1.velocity({ top: "50%" }, { duration: 200, easing: "swing" });
                     McBar3.velocity({ top: "50%" }, { duration: 200, easing: "swing" })
                           .velocity({ rotateZ: "90deg" }, { duration: 800, easing: [500, 20] });
                     McButton.velocity({ rotateZ: "135deg" }, { duration: 800, delay: 200, easing: [500, 20] });
                 } else {
-                    // X → hambúrguer
                     McBar3.velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] })
                           .velocity({ top: "100%" }, { duration: 200, easing: "swing" });
                     McBar1.velocity({ top: "0%" }, { duration: 200, delay: 800, easing: "swing" });
