@@ -1,4 +1,4 @@
-Este é o repositório do website da BIT. O projeto utiliza apenas **HTML/CSS/JS**, Node.js e algumas bibliotecas JS externas.
+Este é o repositório do website da BIT. O projeto utiliza apenas **HTML, CSS, JS** e Node.js.
 
 ## ❖ Processo Seletivo
 
