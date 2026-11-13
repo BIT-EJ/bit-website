@@ -358,12 +358,39 @@
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
+            var McButton = $("[data=hamburger-menu]");
+            var McBar1 = McButton.find("b:nth-child(1)");
+            var McBar3 = McButton.find("b:nth-child(3)");
+
+            function animarIcone(aberto) {
+                McButton.velocity("stop", true);
+                McBar1.velocity("stop", true);
+                McBar3.velocity("stop", true);
+
+                if (aberto) {
+                    McBar1.velocity({ top: "50%" }, { duration: 200, easing: "swing" });
+                    McBar3.velocity({ top: "50%" }, { duration: 200, easing: "swing" })
+                          .velocity({ rotateZ: "90deg" }, { duration: 800, easing: [500, 20] });
+                    McButton.velocity({ rotateZ: "135deg" }, { duration: 800, delay: 200, easing: [500, 20] });
+                } else {
+                    McBar3.velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] })
+                          .velocity({ top: "100%" }, { duration: 200, easing: "swing" });
+                    McBar1.velocity({ top: "0%" }, { duration: 200, delay: 800, easing: "swing" });
+                    McButton.velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] });
+                }
+            }
 
             function definirMenu(aberto) {
+                var estavaAberto = menu.classList.contains('aberto');
                 menu.classList.toggle('aberto', aberto);
                 botao.classList.toggle('close', aberto);
                 botao.setAttribute('aria-expanded', aberto);
                 botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+
+                if (aberto !== estavaAberto) {
+                    McButton.toggleClass("active", aberto);
+                    animarIcone(aberto);
+                }
             }
 
             botao.addEventListener('click', function () {
