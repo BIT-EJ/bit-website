@@ -31,37 +31,31 @@
     <!-- Ícone animado do menu mobile (sanduíche → X) -->
     <style>
         .menu-icon {
-            --menu-icon-size: 24px;
             position: relative;
             display: block;
-            width: var(--menu-icon-size);
-            height: var(--menu-icon-size);
+            width: 24px;
+            height: 18px;
         }
 
-        .menu-line {
+        .menu-icon b {
             position: absolute;
             left: 0;
+            width: 24px;
             height: 3px;
-            width: 100%;
             border-radius: 8px;
             background: currentColor;
-            transition: .15s;
         }
 
-        .menu-line.top    { top: 18%; }
-        .menu-line.middle { top: 48%; }
-        .menu-line.bottom { top: 78%; }
-
-        /* Estado aberto: vira X */
-        .menu-toggle.close .menu-line.top {
-            transform: rotate(45deg);
-            top: 48%;
+        .menu-icon b:nth-child(1) {
+            top: 0;
         }
 
-        .menu-toggle.close .menu-line.middle,
-        .menu-toggle.close .menu-line.bottom {
-            transform: rotate(-45deg);
-            top: 48%;
+        .menu-icon b:nth-child(2) {
+            top: 50%;
+        }
+
+        .menu-icon b:nth-child(3) {
+            top: 100%;
         }
     </style>
 </head>
@@ -79,10 +73,10 @@
             </a>
 
             <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
-                <span class="menu-icon" aria-hidden="true">
-                    <span class="menu-line top"></span>
-                    <span class="menu-line middle"></span>
-                    <span class="menu-line bottom"></span>
+                <span class="menu-icon" data="hamburger-menu" aria-hidden="true">
+                    <b></b>
+                    <b></b>
+                    <b></b>
                 </span>
             </button>
 
@@ -379,6 +373,8 @@
     </footer>
 
     <!-- ===================== SCRIPTS ===================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
     <script>
         // Anos de experiência (aniversário da BIT em 19/12, fundada em 2016) e ano no rodapé
         (function () {
@@ -395,12 +391,30 @@
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
+            var McButton = $("[data=hamburger-menu]");
+            var McBar1 = McButton.find("b:nth-child(1)");
+            var McBar3 = McButton.find("b:nth-child(3)");
 
             function definirMenu(aberto) {
+                var estavaAberto = menu.classList.contains('aberto');
                 menu.classList.toggle('aberto', aberto);
                 botao.classList.toggle('close', aberto);
                 botao.setAttribute('aria-expanded', aberto);
                 botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+
+                if (aberto && !estavaAberto) {
+                    McButton.addClass("active");
+                    McBar1.velocity({ top: "50%" }, { duration: 200, easing: "swing" });
+                    McBar3.velocity({ top: "50%" }, { duration: 200, easing: "swing" })
+                          .velocity({ rotateZ: "90deg" }, { duration: 800, delay: 200, easing: [500, 20] });
+                    McButton.velocity({ rotateZ: "135deg" }, { duration: 800, delay: 200, easing: [500, 20] });
+                } else if (!aberto && estavaAberto) {
+                    McButton.removeClass("active");
+                    McButton.velocity("reverse");
+                    McBar3.velocity({ rotateZ: "0deg" }, { duration: 800, easing: [500, 20] })
+                          .velocity({ top: "100%" }, { duration: 200, easing: "swing" });
+                    McBar1.velocity("reverse", { delay: 800 });
+                }
             }
 
             botao.addEventListener('click', function () {
