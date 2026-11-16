@@ -72,6 +72,42 @@
         .menu-icon b:nth-child(3) {
             top: 100%;
         }
+
+        /* ==================== INÍCIO: ANIMAÇÃO DO MENU SUSPENSO MOBILE ==================== */
+        @media (max-width: 900px) {
+            .nav {
+                display: flex !important;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                visibility: hidden;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                transform: translateY(-8px);
+                transition:
+                    max-height 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    opacity 0.16s ease,
+                    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    padding 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    visibility 0s linear 0.22s;
+            }
+
+            .nav.aberto {
+                max-height: 500px;
+                opacity: 1;
+                visibility: visible;
+                padding-top: 1rem !important;
+                padding-bottom: 1.5rem !important;
+                transform: translateY(0);
+                transition:
+                    max-height 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    opacity 0.16s ease,
+                    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    padding 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+                    visibility 0s linear 0s;
+            }
+        }
+        /* ==================== FIM: ANIMAÇÃO DO MENU SUSPENSO MOBILE ==================== */
     </style>
 
     <!-- Professor -->
