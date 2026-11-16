@@ -69,6 +69,12 @@
         .menu-icon b:nth-child(3) {
             top: 100%;
         }
+
+        /* === INÍCIO: Ajuste para animação suave do menu mobile === */
+        #menu {
+            overflow: hidden;
+        }
+        /* === FIM: Ajuste para animação suave do menu mobile === */
     </style>
 </head>
 <body>
@@ -403,6 +409,9 @@
         (function () {
             var botao = document.getElementById('menu-toggle');
             var menu = document.getElementById('menu');
+            /* === INÍCIO: Referência jQuery do menu para animação === */
+            var $menu = $(menu);
+            /* === FIM: Referência jQuery do menu para animação === */
             var McButton = $("[data=hamburger-menu]");
             var McBar1 = McButton.find("b:nth-child(1)");
             var McBar3 = McButton.find("b:nth-child(3)");
@@ -425,9 +434,45 @@
                 }
             }
 
+            /* === INÍCIO: Função de animação rápida e suave de descer/subir o menu === */
+            function animarMenuSuspenso(aberto) {
+                // Só anima se o botão hambúrguer estiver visível (modo mobile)
+                if (window.getComputedStyle(botao).display === 'none') {
+                    menu.classList.toggle('aberto', aberto);
+                    menu.style.display = '';
+                    menu.style.height = '';
+                    menu.style.opacity = '';
+                    return;
+                }
+
+                $menu.velocity("stop", true);
+
+                if (aberto) {
+                    menu.classList.add('aberto');
+                    $menu.velocity("slideDown", {
+                        duration: 220,
+                        easing: "easeOutCubic",
+                        complete: function () {
+                            menu.style.height = '';
+                        }
+                    });
+                } else {
+                    $menu.velocity("slideUp", {
+                        duration: 180,
+                        easing: "easeInCubic",
+                        complete: function () {
+                            menu.classList.remove('aberto');
+                            menu.style.display = '';
+                            menu.style.height = '';
+                        }
+                    });
+                }
+            }
+            /* === FIM: Função de animação rápida e suave de descer/subir o menu === */
+
             function definirMenu(aberto) {
                 var estavaAberto = menu.classList.contains('aberto');
-                menu.classList.toggle('aberto', aberto);
+                /* === INÍCIO: Chamada da animação do menu suspenso === */
                 botao.classList.toggle('close', aberto);
                 botao.setAttribute('aria-expanded', aberto);
                 botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
@@ -435,8 +480,21 @@
                 if (aberto !== estavaAberto) {
                     McButton.toggleClass("active", aberto);
                     animarIcone(aberto);
+                    animarMenuSuspenso(aberto);
                 }
+                /* === FIM: Chamada da animação do menu suspenso === */
             }
+
+            /* === INÍCIO: Limpa estilos inline ao redimensionar para desktop === */
+            window.addEventListener('resize', function () {
+                if (window.getComputedStyle(botao).display === 'none') {
+                    $menu.velocity("stop", true);
+                    menu.style.display = '';
+                    menu.style.height = '';
+                    menu.style.overflow = '';
+                }
+            });
+            /* === FIM: Limpa estilos inline ao redimensionar para desktop === */
 
             botao.addEventListener('click', function () {
                 definirMenu(botao.getAttribute('aria-expanded') !== 'true');
