@@ -79,7 +79,7 @@
     align-items: flex-start;
     gap: 16px;
     padding: 28px 32px;
-    border: 1px solid var(--line-blue);
+    border: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
     border-radius: var(--radius);
     background: var(--surface-blue);
     box-sizing: border-box;
