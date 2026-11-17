@@ -161,7 +161,7 @@
 }
 
 .ed-secao li::marker {
-    color: var(--blue-light);
+    color: #FFFFFF;
 }
 
 .ed-subitem {
