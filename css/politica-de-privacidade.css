@@ -111,7 +111,7 @@
 
 .pp-secao {
     padding-block: clamp(24px, 4vw, 40px);
-    border-top: 1px solid var(--line-blue);
+    border-top: 1px solid #FFFFFF;
     scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
@@ -162,7 +162,7 @@
 }
 
 .pp-secao li::marker {
-    color: var(--blue-light);
+    color: #FFFFFF;
 }
 
 .pp-secao a {
